@@ -4,6 +4,7 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import sharp from 'sharp';
 import { glob } from 'glob';
+import { JSDOM } from 'jsdom';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -55,124 +56,64 @@ async function downloadPackages() {
 }
 
 /**
- * Parse color from various CSS color formats to RGB
+ * Parse hex color to RGB
  */
-function parseColor(colorStr) {
-  if (!colorStr || colorStr === 'none' || colorStr === 'transparent') {
-    return null;
-  }
+function hexToRgb(hex) {
+  // Remove # if present
+  hex = hex.replace('#', '');
 
-  // Hex color (#RGB or #RRGGBB)
-  if (colorStr.startsWith('#')) {
-    const hex = colorStr.slice(1);
-    if (hex.length === 3) {
-      return {
-        r: parseInt(hex[0] + hex[0], 16),
-        g: parseInt(hex[1] + hex[1], 16),
-        b: parseInt(hex[2] + hex[2], 16)
-      };
-    } else if (hex.length === 6) {
-      return {
-        r: parseInt(hex.slice(0, 2), 16),
-        g: parseInt(hex.slice(2, 4), 16),
-        b: parseInt(hex.slice(4, 6), 16)
-      };
-    }
-  }
-
-  // RGB/RGBA color
-  const rgbMatch = colorStr.match(/rgba?\((\d+),\s*(\d+),\s*(\d+)/);
-  if (rgbMatch) {
+  if (hex.length === 3) {
     return {
-      r: parseInt(rgbMatch[1]),
-      g: parseInt(rgbMatch[2]),
-      b: parseInt(rgbMatch[3])
+      r: parseInt(hex[0] + hex[0], 16),
+      g: parseInt(hex[1] + hex[1], 16),
+      b: parseInt(hex[2] + hex[2], 16)
+    };
+  } else if (hex.length === 6) {
+    return {
+      r: parseInt(hex.slice(0, 2), 16),
+      g: parseInt(hex.slice(2, 4), 16),
+      b: parseInt(hex.slice(4, 6), 16)
     };
   }
-
-  // Named colors - just support common ones
-  const namedColors = {
-    'black': { r: 0, g: 0, b: 0 },
-    'white': { r: 255, g: 255, b: 255 },
-    'red': { r: 255, g: 0, b: 0 },
-    'green': { r: 0, g: 128, b: 0 },
-    'blue': { r: 0, g: 0, b: 255 }
-  };
-
-  return namedColors[colorStr.toLowerCase()] || null;
+  return null;
 }
 
 /**
- * Detect if an SVG has a single solid color
+ * RGB to hex
  */
-async function detectSolidColorSVG(svgPath) {
+function rgbToHex(r, g, b) {
+  return `#${r.toString(16).padStart(2, '0')}${g.toString(16).padStart(2, '0')}${b.toString(16).padStart(2, '0')}`;
+}
+
+/**
+ * Extract color from SVG using DOM parsing
+ */
+async function extractSVGColor(svgPath) {
   try {
     const svgContent = await fs.readFile(svgPath, 'utf-8');
-    const colors = new Set();
+    const dom = new JSDOM(svgContent, { contentType: 'image/svg+xml' });
+    const document = dom.window.document;
 
-    // Find all fill and stroke attributes
-    const fillMatches = svgContent.matchAll(/fill=["']([^"']+)["']/g);
-    const strokeMatches = svgContent.matchAll(/stroke=["']([^"']+)["']/g);
-    const styleMatches = svgContent.matchAll(/style=["']([^"']+)["']/g);
-
-    // Process fill attributes
-    for (const match of fillMatches) {
-      const color = parseColor(match[1]);
-      if (color) {
-        colors.add(`${color.r},${color.g},${color.b}`);
+    // Find path elements with fill attribute
+    const paths = document.querySelectorAll('path[fill]');
+    if (paths.length > 0) {
+      const fillColor = paths[0].getAttribute('fill');
+      if (fillColor && fillColor.startsWith('#')) {
+        return hexToRgb(fillColor);
       }
-    }
-
-    // Process stroke attributes
-    for (const match of strokeMatches) {
-      const color = parseColor(match[1]);
-      if (color) {
-        colors.add(`${color.r},${color.g},${color.b}`);
-      }
-    }
-
-    // Process inline styles
-    for (const match of styleMatches) {
-      const style = match[1];
-      const fillStyleMatch = style.match(/fill:\s*([^;]+)/);
-      const strokeStyleMatch = style.match(/stroke:\s*([^;]+)/);
-
-      if (fillStyleMatch) {
-        const color = parseColor(fillStyleMatch[1].trim());
-        if (color) colors.add(`${color.r},${color.g},${color.b}`);
-      }
-      if (strokeStyleMatch) {
-        const color = parseColor(strokeStyleMatch[1].trim());
-        if (color) colors.add(`${color.r},${color.g},${color.b}`);
-      }
-    }
-
-    // If there's only one color, return it
-    if (colors.size === 1) {
-      const [colorKey] = colors;
-      const [r, g, b] = colorKey.split(',').map(Number);
-      return { r, g, b };
     }
 
     return null;
   } catch (error) {
-    console.error(`    Error detecting color in SVG ${svgPath}:`, error.message);
+    console.error(`    Error extracting color from SVG ${svgPath}:`, error.message);
     return null;
   }
 }
 
 /**
- * Detect if an image has a single solid color
+ * Detect if a raster image has a single solid color
  */
 async function detectSolidColor(imagePath) {
-  const ext = path.extname(imagePath).toLowerCase();
-
-  // Handle SVG files
-  if (ext === '.svg') {
-    return await detectSolidColorSVG(imagePath);
-  }
-
-  // Handle raster images
   try {
     const image = sharp(imagePath);
     const { data, info } = await image.raw().toBuffer({ resolveWithObject: true });
@@ -190,8 +131,8 @@ async function detectSolidColor(imagePath) {
       // Skip fully transparent pixels
       if (a === 0) continue;
 
-      // Skip translucent pixels
-      if (a < 255) return null;
+      // Skip translucent pixels (allow some tolerance)
+      if (a < 250) return null;
 
       const colorKey = `${r},${g},${b}`;
       colors.set(colorKey, (colors.get(colorKey) || 0) + 1);
@@ -212,56 +153,56 @@ async function detectSolidColor(imagePath) {
 }
 
 /**
- * Add background to an SVG by inserting a rect element
+ * Create SVG with colored background using DOM manipulation
  */
-async function addBackgroundToSVG(svgPath, backgroundColor, outputPath) {
+async function createSVGWithBackground(svgPath, backgroundColor, outputPath) {
   try {
-    let svgContent = await fs.readFile(svgPath, 'utf-8');
+    const svgContent = await fs.readFile(svgPath, 'utf-8');
+    const dom = new JSDOM(svgContent, { contentType: 'image/svg+xml' });
+    const document = dom.window.document;
+    const svg = document.querySelector('svg');
 
-    // Convert RGB to hex color
-    const hexColor = `#${backgroundColor.r.toString(16).padStart(2, '0')}${backgroundColor.g.toString(16).padStart(2, '0')}${backgroundColor.b.toString(16).padStart(2, '0')}`;
-
-    // Extract viewBox or width/height from SVG
-    const viewBoxMatch = svgContent.match(/viewBox=["']([^"']+)["']/);
-    const widthMatch = svgContent.match(/width=["']([^"']+)["']/);
-    const heightMatch = svgContent.match(/height=["']([^"']+)["']/);
-
-    let rectAttrs = `fill="${hexColor}"`;
-
-    if (viewBoxMatch) {
-      const [x, y, width, height] = viewBoxMatch[1].split(/\s+/);
-      rectAttrs = `x="${x}" y="${y}" width="${width}" height="${height}" ${rectAttrs}`;
-    } else if (widthMatch && heightMatch) {
-      rectAttrs = `width="${widthMatch[1]}" height="${heightMatch[1]}" ${rectAttrs}`;
-    } else {
-      // Default size if no dimensions found
-      rectAttrs = `width="100%" height="100%" ${rectAttrs}`;
+    if (!svg) {
+      console.error(`    No SVG element found in ${svgPath}`);
+      return false;
     }
 
-    // Insert background rect as first element after opening <svg> tag
-    const backgroundRect = `<rect ${rectAttrs}/>`;
-    svgContent = svgContent.replace(/(<svg[^>]*>)/, `$1\n  ${backgroundRect}`);
+    // Get viewBox or dimensions
+    const viewBox = svg.getAttribute('viewBox');
+    let rectAttrs = {};
 
-    await fs.writeFile(outputPath, svgContent, 'utf-8');
+    if (viewBox) {
+      const [x, y, width, height] = viewBox.split(/\s+/);
+      rectAttrs = { x, y, width, height };
+    } else {
+      const width = svg.getAttribute('width') || '100%';
+      const height = svg.getAttribute('height') || '100%';
+      rectAttrs = { width, height };
+    }
+
+    // Create background rectangle
+    const rect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+    Object.entries(rectAttrs).forEach(([key, value]) => {
+      rect.setAttribute(key, value);
+    });
+    rect.setAttribute('fill', rgbToHex(backgroundColor.r, backgroundColor.g, backgroundColor.b));
+
+    // Insert as first child
+    svg.insertBefore(rect, svg.firstChild);
+
+    // Write back
+    await fs.writeFile(outputPath, dom.serialize(), 'utf-8');
     return true;
   } catch (error) {
-    console.error(`    Error adding background to SVG ${svgPath}:`, error.message);
+    console.error(`    Error creating SVG with background ${svgPath}:`, error.message);
     return false;
   }
 }
 
 /**
- * Add background to an image
+ * Add background to a raster image
  */
 async function addBackground(imagePath, backgroundColor, outputPath) {
-  const ext = path.extname(imagePath).toLowerCase();
-
-  // Handle SVG files with XML manipulation
-  if (ext === '.svg') {
-    return await addBackgroundToSVG(imagePath, backgroundColor, outputPath);
-  }
-
-  // Handle raster images with sharp
   try {
     const image = sharp(imagePath);
     const metadata = await image.metadata();
@@ -289,13 +230,13 @@ async function addBackground(imagePath, backgroundColor, outputPath) {
 }
 
 /**
- * Process images in dark/light folders
+ * Process PNG/WEBP images in dark/light folders
  */
 async function processFolderImages() {
-  console.log('🎨 Processing images with backgrounds...');
+  console.log('🎨 Processing PNG/WEBP images with backgrounds...');
 
-  // Find all image files
-  const imageExtensions = ['png', 'jpg', 'jpeg', 'webp', 'svg'];
+  // Find all raster image files
+  const imageExtensions = ['png', 'jpg', 'jpeg', 'webp'];
   const patterns = imageExtensions.map(ext =>
     path.join(WORKING_DIR, '**', `*.${ext}`)
   );
@@ -306,7 +247,7 @@ async function processFolderImages() {
     allFiles.push(...files);
   }
 
-  console.log(`  Found ${allFiles.length} image files`);
+  console.log(`  Found ${allFiles.length} raster image files`);
 
   for (const filePath of allFiles) {
     const dir = path.dirname(filePath);
@@ -316,7 +257,8 @@ async function processFolderImages() {
     const nameWithoutExt = path.basename(fileName, ext);
 
     // Skip if it's already a processed file
-    if (nameWithoutExt.endsWith('-bg') || nameWithoutExt.endsWith('-colored-bg')) {
+    if (nameWithoutExt.endsWith('-bg') || nameWithoutExt.endsWith('-colored-bg') ||
+        nameWithoutExt.endsWith('-colored-dark') || nameWithoutExt.endsWith('-colored-light')) {
       continue;
     }
 
@@ -335,103 +277,115 @@ async function processFolderImages() {
     }
   }
 
-  console.log('✅ Background processing complete\n');
+  console.log('✅ PNG/WEBP background processing complete\n');
 }
 
 /**
- * Process colored backgrounds
+ * Process SVG colored icons
+ */
+async function processSVGColoredIcons() {
+  console.log('🎨 Processing SVG colored icons...');
+
+  // Find all -color.svg files in icons/ folder
+  const svgPattern = path.join(WORKING_DIR, 'icons-static-svg', 'icons', '*-color.svg');
+  const coloredSVGs = await glob(svgPattern.replace(/\\/g, '/'));
+
+  console.log(`  Found ${coloredSVGs.length} colored SVG files`);
+
+  let processedCount = 0;
+  for (const svgPath of coloredSVGs) {
+    const fileName = path.basename(svgPath);
+    const nameWithoutExt = path.basename(fileName, '.svg');
+    const baseName = nameWithoutExt.replace('-color', '');
+    const dir = path.dirname(svgPath);
+
+    console.log(`  🎨 Processing: ${fileName}`);
+
+    // Extract the color from the SVG
+    const color = await extractSVGColor(svgPath);
+
+    if (color) {
+      console.log(`    Extracted color: ${rgbToHex(color.r, color.g, color.b)}`);
+
+      // Create dark version (black background)
+      const darkPath = path.join(dir, `${baseName}-colored-dark.svg`);
+      await createSVGWithBackground(svgPath, { r: 0, g: 0, b: 0 }, darkPath);
+      console.log(`    ✅ Created: ${path.basename(darkPath)}`);
+
+      // Create light version (white background)
+      const lightPath = path.join(dir, `${baseName}-colored-light.svg`);
+      await createSVGWithBackground(svgPath, { r: 255, g: 255, b: 255 }, lightPath);
+      console.log(`    ✅ Created: ${path.basename(lightPath)}`);
+
+      processedCount++;
+    } else {
+      console.log(`    ⏭️  No color extracted`);
+    }
+  }
+
+  console.log(`✅ Processed ${processedCount} SVG colored icons\n`);
+}
+
+/**
+ * Process PNG/WEBP colored backgrounds
  */
 async function processColoredBackgrounds() {
-  console.log('🎨 Processing colored backgrounds...');
+  console.log('🎨 Processing PNG/WEBP colored backgrounds...');
 
-  // Find all image files again
-  const imageExtensions = ['png', 'jpg', 'jpeg', 'webp'];
-  const patterns = imageExtensions.map(ext =>
-    path.join(WORKING_DIR, '**', `*.${ext}`)
-  );
+  // Find all *-color.png and *-color.webp files in dark/light folders
+  const patterns = [
+    path.join(WORKING_DIR, '**', 'dark', '*-color.png'),
+    path.join(WORKING_DIR, '**', 'dark', '*-color.webp'),
+    path.join(WORKING_DIR, '**', 'light', '*-color.png'),
+    path.join(WORKING_DIR, '**', 'light', '*-color.webp')
+  ];
 
-  const allFiles = [];
+  const colorFiles = [];
   for (const pattern of patterns) {
     const files = await glob(pattern.replace(/\\/g, '/'));
-    allFiles.push(...files);
+    colorFiles.push(...files);
   }
 
-  // Group files by base name and directory
-  const filesByDir = new Map();
+  console.log(`  Found ${colorFiles.length} color variant files`);
 
-  for (const filePath of allFiles) {
-    const dir = path.dirname(filePath);
-    const dirName = path.basename(dir);
-    const fileName = path.basename(filePath);
+  let processedCount = 0;
+  for (const colorFile of colorFiles) {
+    const dir = path.dirname(colorFile);
+    const fileName = path.basename(colorFile);
     const ext = path.extname(fileName);
     const nameWithoutExt = path.basename(fileName, ext);
+    const baseName = nameWithoutExt.replace('-color', '');
 
-    // Skip already processed files
-    if (nameWithoutExt.endsWith('-bg') || nameWithoutExt.endsWith('-colored-bg')) {
-      continue;
-    }
+    // Look for corresponding main file
+    const mainFile = path.join(dir, `${baseName}${ext}`);
 
-    // Only process dark/light folders
-    if (dirName !== 'dark' && dirName !== 'light') {
-      continue;
-    }
+    if (await fs.pathExists(mainFile)) {
+      console.log(`  🎨 Processing color pair: ${baseName}`);
 
-    if (!filesByDir.has(dir)) {
-      filesByDir.set(dir, new Map());
-    }
+      // Detect solid color from color file
+      const color = await detectSolidColor(colorFile);
 
-    const dirFiles = filesByDir.get(dir);
+      if (color) {
+        console.log(`    Detected solid color: ${rgbToHex(color.r, color.g, color.b)}`);
 
-    // Extract base name (remove -color suffix if present)
-    let baseName;
-    if (nameWithoutExt.endsWith('-color')) {
-      baseName = nameWithoutExt.slice(0, -6); // Remove '-color'
-      if (!dirFiles.has(baseName)) {
-        dirFiles.set(baseName, {});
-      }
-      dirFiles.get(baseName).colorFile = filePath;
-    } else {
-      baseName = nameWithoutExt;
-      if (!dirFiles.has(baseName)) {
-        dirFiles.set(baseName, {});
-      }
-      dirFiles.get(baseName).mainFile = filePath;
-    }
-  }
+        const outputPath = path.join(dir, `${baseName}-colored-bg${ext}`);
 
-  // Process color combinations
-  let processedCount = 0;
-  for (const [dir, dirFiles] of filesByDir) {
-    for (const [baseName, files] of dirFiles) {
-      if (files.mainFile && files.colorFile) {
-        console.log(`  🎨 Processing color pair: ${baseName}`);
+        await addBackground(mainFile, {
+          r: color.r,
+          g: color.g,
+          b: color.b,
+          alpha: 1
+        }, outputPath);
 
-        // Detect solid color
-        const color = await detectSolidColor(files.colorFile);
-
-        if (color) {
-          console.log(`    Detected solid color: rgb(${color.r}, ${color.g}, ${color.b})`);
-
-          const mainExt = path.extname(files.mainFile);
-          const outputPath = path.join(dir, `${baseName}-colored-bg${mainExt}`);
-
-          await addBackground(files.mainFile, {
-            r: color.r,
-            g: color.g,
-            b: color.b,
-            alpha: 1
-          }, outputPath);
-
-          console.log(`    ✅ Created: ${path.basename(outputPath)}`);
-          processedCount++;
-        } else {
-          console.log(`    ⏭️  No solid color detected`);
-        }
+        console.log(`    ✅ Created: ${path.basename(outputPath)}`);
+        processedCount++;
+      } else {
+        console.log(`    ⏭️  No solid color detected in ${fileName}`);
       }
     }
   }
 
-  console.log(`✅ Processed ${processedCount} colored backgrounds\n`);
+  console.log(`✅ Processed ${processedCount} PNG/WEBP colored backgrounds\n`);
 }
 
 /**
@@ -462,6 +416,7 @@ async function main() {
   try {
     await downloadPackages();
     await processFolderImages();
+    await processSVGColoredIcons();
     await processColoredBackgrounds();
     await copyToPackages();
 
