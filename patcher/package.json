@@ -3,14 +3,23 @@
   "version": "1.0.0",
   "description": "Icon patcher for extended-lobe-icons",
   "type": "module",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
-    "patch": "node index.js"
+    "build": "tsc",
+    "patch": "npm run build && node dist/index.js",
+    "dev": "tsx src/index.ts"
   },
   "dependencies": {
     "sharp": "^0.33.0",
     "fs-extra": "^11.2.0",
     "glob": "^10.3.10",
     "jsdom": "^24.0.0"
+  },
+  "devDependencies": {
+    "@types/fs-extra": "^11.0.4",
+    "@types/jsdom": "^21.1.6",
+    "@types/node": "^20.11.0",
+    "tsx": "^4.7.0",
+    "typescript": "^5.3.3"
   }
 }

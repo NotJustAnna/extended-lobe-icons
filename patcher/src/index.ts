@@ -13,16 +13,26 @@ const PACKAGES = [
   '@lobehub/icons-static-svg',
   '@lobehub/icons-static-png',
   '@lobehub/icons-static-webp'
-];
+] as const;
 
-const WORKING_DIR = path.join(__dirname, 'working');
-const PACKAGES_DIR = path.join(__dirname, '..', 'packages');
-const UPSTREAM_DIR = path.join(__dirname, 'upstream');
+const WORKING_DIR = path.join(__dirname, '..', 'working');
+const PACKAGES_DIR = path.join(__dirname, '..', '..', 'packages');
+const UPSTREAM_DIR = path.join(__dirname, '..', 'upstream');
+
+interface RGBColor {
+  r: number;
+  g: number;
+  b: number;
+}
+
+interface RGBAColor extends RGBColor {
+  alpha: number;
+}
 
 /**
  * Copy package files from node_modules to working directory
  */
-async function downloadPackages() {
+async function downloadPackages(): Promise<void> {
   console.log('📦 Downloading packages...');
 
   // Ensure working directory exists
@@ -37,7 +47,7 @@ async function downloadPackages() {
 
     if (await fs.pathExists(sourcePath)) {
       await fs.copy(sourcePath, destPath, {
-        filter: (src) => {
+        filter: (src: string) => {
           // Get relative path from the source
           const relative = path.relative(sourcePath, src);
 
@@ -58,7 +68,7 @@ async function downloadPackages() {
 /**
  * Parse hex color to RGB
  */
-function hexToRgb(hex) {
+function hexToRgb(hex: string): RGBColor | null {
   // Remove # if present
   hex = hex.replace('#', '');
 
@@ -81,14 +91,14 @@ function hexToRgb(hex) {
 /**
  * RGB to hex
  */
-function rgbToHex(r, g, b) {
+function rgbToHex(r: number, g: number, b: number): string {
   return `#${r.toString(16).padStart(2, '0')}${g.toString(16).padStart(2, '0')}${b.toString(16).padStart(2, '0')}`;
 }
 
 /**
  * Extract color from SVG using DOM parsing
  */
-async function extractSVGColor(svgPath) {
+async function extractSVGColor(svgPath: string): Promise<RGBColor | null> {
   try {
     const svgContent = await fs.readFile(svgPath, 'utf-8');
     const dom = new JSDOM(svgContent, { contentType: 'image/svg+xml' });
@@ -105,7 +115,8 @@ async function extractSVGColor(svgPath) {
 
     return null;
   } catch (error) {
-    console.error(`    Error extracting color from SVG ${svgPath}:`, error.message);
+    const errorMessage = error instanceof Error ? error.message : String(error);
+    console.error(`    Error extracting color from SVG ${svgPath}:`, errorMessage);
     return null;
   }
 }
@@ -113,13 +124,13 @@ async function extractSVGColor(svgPath) {
 /**
  * Detect if a raster image has a single solid color
  */
-async function detectSolidColor(imagePath) {
+async function detectSolidColor(imagePath: string): Promise<RGBColor | null> {
   try {
     const image = sharp(imagePath);
     const { data, info } = await image.raw().toBuffer({ resolveWithObject: true });
 
     const channels = info.channels;
-    const colors = new Map();
+    const colors = new Map<string, number>();
 
     // Sample pixels to detect solid color
     for (let i = 0; i < data.length; i += channels) {
@@ -147,7 +158,8 @@ async function detectSolidColor(imagePath) {
 
     return null;
   } catch (error) {
-    console.error(`    Error detecting color in ${imagePath}:`, error.message);
+    const errorMessage = error instanceof Error ? error.message : String(error);
+    console.error(`    Error detecting color in ${imagePath}:`, errorMessage);
     return null;
   }
 }
@@ -155,7 +167,7 @@ async function detectSolidColor(imagePath) {
 /**
  * Create SVG with colored background using DOM manipulation
  */
-async function createSVGWithBackground(svgPath, backgroundColor, outputPath) {
+async function createSVGWithBackground(svgPath: string, backgroundColor: RGBColor, outputPath: string): Promise<boolean> {
   try {
     const svgContent = await fs.readFile(svgPath, 'utf-8');
     const dom = new JSDOM(svgContent, { contentType: 'image/svg+xml' });
@@ -169,7 +181,7 @@ async function createSVGWithBackground(svgPath, backgroundColor, outputPath) {
 
     // Get viewBox or dimensions
     const viewBox = svg.getAttribute('viewBox');
-    let rectAttrs = {};
+    let rectAttrs: Record<string, string> = {};
 
     if (viewBox) {
       const [x, y, width, height] = viewBox.split(/\s+/);
@@ -194,7 +206,8 @@ async function createSVGWithBackground(svgPath, backgroundColor, outputPath) {
     await fs.writeFile(outputPath, dom.serialize(), 'utf-8');
     return true;
   } catch (error) {
-    console.error(`    Error creating SVG with background ${svgPath}:`, error.message);
+    const errorMessage = error instanceof Error ? error.message : String(error);
+    console.error(`    Error creating SVG with background ${svgPath}:`, errorMessage);
     return false;
   }
 }
@@ -202,10 +215,15 @@ async function createSVGWithBackground(svgPath, backgroundColor, outputPath) {
 /**
  * Add background to a raster image
  */
-async function addBackground(imagePath, backgroundColor, outputPath) {
+async function addBackground(imagePath: string, backgroundColor: RGBAColor, outputPath: string): Promise<boolean> {
   try {
     const image = sharp(imagePath);
     const metadata = await image.metadata();
+
+    if (!metadata.width || !metadata.height) {
+      console.error(`    Unable to get dimensions for ${imagePath}`);
+      return false;
+    }
 
     // Create a background
     const background = sharp({
@@ -224,7 +242,8 @@ async function addBackground(imagePath, backgroundColor, outputPath) {
 
     return true;
   } catch (error) {
-    console.error(`    Error adding background to ${imagePath}:`, error.message);
+    const errorMessage = error instanceof Error ? error.message : String(error);
+    console.error(`    Error adding background to ${imagePath}:`, errorMessage);
     return false;
   }
 }
@@ -232,7 +251,7 @@ async function addBackground(imagePath, backgroundColor, outputPath) {
 /**
  * Process PNG/WEBP images in dark/light folders
  */
-async function processFolderImages() {
+async function processFolderImages(): Promise<void> {
   console.log('🎨 Processing PNG/WEBP images with backgrounds...');
 
   // Find all raster image files
@@ -241,7 +260,7 @@ async function processFolderImages() {
     path.join(WORKING_DIR, '**', `*.${ext}`)
   );
 
-  const allFiles = [];
+  const allFiles: string[] = [];
   for (const pattern of patterns) {
     const files = await glob(pattern.replace(/\\/g, '/'));
     allFiles.push(...files);
@@ -283,7 +302,7 @@ async function processFolderImages() {
 /**
  * Process SVG colored icons
  */
-async function processSVGColoredIcons() {
+async function processSVGColoredIcons(): Promise<void> {
   console.log('🎨 Processing SVG colored icons...');
 
   // Find all -color.svg files in icons/ folder
@@ -329,7 +348,7 @@ async function processSVGColoredIcons() {
 /**
  * Process PNG/WEBP colored backgrounds
  */
-async function processColoredBackgrounds() {
+async function processColoredBackgrounds(): Promise<void> {
   console.log('🎨 Processing PNG/WEBP colored backgrounds...');
 
   // Find all *-color.png and *-color.webp files in dark/light folders
@@ -340,7 +359,7 @@ async function processColoredBackgrounds() {
     path.join(WORKING_DIR, '**', 'light', '*-color.webp')
   ];
 
-  const colorFiles = [];
+  const colorFiles: string[] = [];
   for (const pattern of patterns) {
     const files = await glob(pattern.replace(/\\/g, '/'));
     colorFiles.push(...files);
@@ -391,7 +410,7 @@ async function processColoredBackgrounds() {
 /**
  * Copy working directory to packages/
  */
-async function copyToPackages() {
+async function copyToPackages(): Promise<void> {
   console.log('📁 Copying to packages/...');
 
   // Remove existing packages directory
@@ -410,7 +429,7 @@ async function copyToPackages() {
 /**
  * Main execution
  */
-async function main() {
+async function main(): Promise<void> {
   console.log('🚀 Starting icon patcher\n');
 
   try {

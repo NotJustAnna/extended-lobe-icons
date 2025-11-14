@@ -4,8 +4,8 @@
   "description": "Package to track upstream @lobehub icon packages",
   "private": true,
   "dependencies": {
-    "@lobehub/icons-static-svg": "*",
-    "@lobehub/icons-static-png": "*",
-    "@lobehub/icons-static-webp": "*"
+    "@lobehub/icons-static-svg": "^1.73.0",
+    "@lobehub/icons-static-png": "^1.74.0",
+    "@lobehub/icons-static-webp": "^1.74.0"
   }
 }
