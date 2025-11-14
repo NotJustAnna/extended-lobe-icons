@@ -1,0 +1,15 @@
+{
+  "name": "icon-patcher",
+  "version": "1.0.0",
+  "description": "Icon patcher for extended-lobe-icons",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "patch": "node index.js"
+  },
+  "dependencies": {
+    "sharp": "^0.33.0",
+    "fs-extra": "^11.2.0",
+    "glob": "^10.3.10"
+  }
+}
