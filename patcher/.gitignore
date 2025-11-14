@@ -1,0 +1,29 @@
+# Gradle
+build/
+.gradle/
+gradle-app.setting
+
+# IDE
+.idea/
+.project
+.classpath
+.c9/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Kotlin
+out/
+*.class
+*.jar
+!gradle-wrapper.jar
+*.zip
+
+# Mac
+.DS_Store
+
+# Environment
+.env
+*.local
+cache

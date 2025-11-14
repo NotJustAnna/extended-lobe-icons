@@ -1,0 +1,10 @@
+{
+  "name": "upstream-icons-tracker",
+  "version": "1.0.0",
+  "description": "Package to track upstream @lobehub icon packages",
+  "private": true,
+  "dependencies": {
+    "@lobehub/icons-static-png": "^1.74.0",
+    "@lobehub/icons-static-webp": "^1.74.0"
+  }
+}
