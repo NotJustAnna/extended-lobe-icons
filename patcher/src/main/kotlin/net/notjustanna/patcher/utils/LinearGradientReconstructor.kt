@@ -1,5 +1,6 @@
 package net.notjustanna.patcher.utils
 
+import net.notjustanna.patcher.config.Config
 import java.awt.Color
 import java.awt.image.BufferedImage
 import kotlin.math.*
@@ -7,229 +8,124 @@ import kotlin.math.*
 data class GradientStop(val position: Float, val color: Color)
 data class LinearGradient(val angle: Double, val stops: List<GradientStop>)
 data class ColorSample(val x: Int, val y: Int, val color: Color, val lab: LabColor)
+data class ContentBounds(val minX: Int, val maxX: Int, val minY: Int, val maxY: Int, val width: Int, val height: Int)
 
 class LinearGradientReconstructor(private val image: BufferedImage) {
-    private val width = image.width
-    private val height = image.height
-    private val centerX = width / 2.0
-    private val centerY = height / 2.0
+    private val imageWidth = image.width
+    private val imageHeight = image.height
 
     private val transparencyThreshold = 30
-    private val targetSampleRate = 0.1 // 10% of pixels
+    private val targetSampleRate = 0.1 // 10% of content pixels
 
-    // Cache for performance
+    // Content bounds - calculated once
+    private val contentBounds: ContentBounds by lazy { calculateContentBounds() }
+    private val contentCenterX: Double by lazy { (contentBounds.minX + contentBounds.maxX) / 2.0 }
+    private val contentCenterY: Double by lazy { (contentBounds.minY + contentBounds.maxY) / 2.0 }
+
+    // Cache
     private val labCache = mutableMapOf<Color, LabColor>()
 
     fun reconstructGradient(): LinearGradient? {
-        // println("Starting gradient reconstruction for ${width}x${height} image")
+        if (Config.IS_DEVELOPMENT) println("Starting gradient reconstruction for ${imageWidth}x${imageHeight} image")
 
-        // Step 1: Collect initial samples for angle detection
-        val angleSamples = collectSamplesForAngleDetection()
-        if (angleSamples.size < 10) {
-            // println("Not enough valid pixels found")
+        // Check if we have content
+        if (contentBounds.width <= 0 || contentBounds.height <= 0) {
+            if (Config.IS_DEVELOPMENT) println("No content found in image")
             return null
         }
 
-        // Step 2: Detect gradient angle with high precision
-        val gradientAngle = detectGradientAngle(angleSamples)
-        // println("Detected gradient angle: ${gradientAngle * 180 / PI}°")
+        if (Config.IS_DEVELOPMENT) println("Content bounds: ${contentBounds.width}x${contentBounds.height} at (${contentBounds.minX}, ${contentBounds.minY})")
 
-        // Step 3: Sample 10% of the image pixels
-        val allSamples = collectImageSamples()
-        // println("Collected ${allSamples.size} samples (${(allSamples.size * 100.0 / (width * height)).format(2)}% of image)")
+        // Step 1: Collect samples once from entire content area
+        val samples = collectContentSamples()
+        if (samples.size < 10) {
+            if (Config.IS_DEVELOPMENT) println("Not enough valid pixels found (${samples.size})")
+            return null
+        }
 
-        // Step 4: Project all samples perpendicular to gradient line
-        val projectedSamples = projectSamplesOntoGradientAxis(allSamples, gradientAngle)
+        if (Config.IS_DEVELOPMENT) println("Collected ${samples.size} samples (${(samples.size * 100.0 / (contentBounds.width * contentBounds.height)).format(2)}% of content)")
 
-        // Step 5: Reconstruct gradient stops from projections
-        val stops = reconstructGradientStops(projectedSamples)
+        // Step 2: Test multiple angles and find the best one
+        val (bestAngle, bestScore) = findBestGradientAngle(samples)
+
+        if (bestScore.variance < 1.0) {
+            if (Config.IS_DEVELOPMENT) println("No gradient detected - insufficient color variance (${bestScore.variance.format(2)}) -- Consistency was ${bestScore.consistency.format(2)}")
+            return null
+        }
+
+        if (bestScore.consistency < 0.4) {
+            if (Config.IS_DEVELOPMENT) println("No gradient detected - insufficient gradient consistency (${bestScore.consistency.format(2)})")
+            return null
+        }
+
+        if (Config.IS_DEVELOPMENT) println("Best gradient angle: ${bestAngle * 180 / PI}° (variance: ${bestScore.variance.format(2)}, consistency: ${bestScore.consistency.format(2)})")
+
+        // Step 3: Extract gradient stops along best angle
+        val stops = extractGradientStops(samples, bestAngle)
 
         return if (stops.size >= 2) {
-            LinearGradient(gradientAngle, stops)
+            LinearGradient(bestAngle, stops)
         } else {
-            // println("Could not extract enough gradient stops")
+            if (Config.IS_DEVELOPMENT) println("Could not extract enough gradient stops")
             null
         }
     }
 
-    private fun collectSamplesForAngleDetection(): List<ColorSample> {
+    private data class AngleScore(val variance: Double, val consistency: Double)
+
+    private fun calculateContentBounds(): ContentBounds {
+        var minX = imageWidth
+        var maxX = -1
+        var minY = imageHeight
+        var maxY = -1
+
+        // Quick scan to find bounds
+        val scanStep = 3
+
+        for (y in 0 until imageHeight step scanStep) {
+            for (x in 0 until imageWidth step scanStep) {
+                val color = Color(image.getRGB(x, y), true)
+                if (color.alpha > transparencyThreshold) {
+                    minX = minOf(minX, x)
+                    maxX = maxOf(maxX, x)
+                    minY = minOf(minY, y)
+                    maxY = maxOf(maxY, y)
+                }
+            }
+        }
+
+        // Refine edges
+        for (y in maxOf(0, minY - scanStep)..minOf(imageHeight - 1, maxY + scanStep)) {
+            for (x in maxOf(0, minX - scanStep)..minOf(imageWidth - 1, maxX + scanStep)) {
+                val color = Color(image.getRGB(x, y), true)
+                if (color.alpha > transparencyThreshold) {
+                    minX = minOf(minX, x)
+                    maxX = maxOf(maxX, x)
+                    minY = minOf(minY, y)
+                    maxY = maxOf(maxY, y)
+                }
+            }
+        }
+
+        val width = if (maxX >= minX) maxX - minX + 1 else 0
+        val height = if (maxY >= minY) maxY - minY + 1 else 0
+
+        return ContentBounds(minX, maxX, minY, maxY, width, height)
+    }
+
+    private fun collectContentSamples(): List<ColorSample> {
         val samples = mutableListOf<ColorSample>()
 
-        // Grid sampling for angle detection - use fewer but well-distributed points
-        val gridSize = 20 // 20x20 grid
-        val stepX = width / gridSize
-        val stepY = height / gridSize
+        // Calculate step size for ~10% coverage
+        val totalContentPixels = contentBounds.width * contentBounds.height
+        val targetSamples = (totalContentPixels * targetSampleRate).toInt().coerceAtLeast(100)
+        val step = sqrt(totalContentPixels.toDouble() / targetSamples).toInt().coerceAtLeast(1)
 
-        for (gy in 0 until gridSize) {
-            for (gx in 0 until gridSize) {
-                val x = gx * stepX + stepX / 2
-                val y = gy * stepY + stepY / 2
-
-                if (x < width && y < height) {
-                    val color = getPixelColor(x, y)
-                    if (color != null && color.alpha > transparencyThreshold) {
-                        val rgbColor = Color(color.red, color.green, color.blue)
-                        samples.add(ColorSample(x, y, rgbColor, getLabColor(rgbColor)))
-                    }
-                }
-            }
-        }
-
-        return samples
-    }
-
-    private fun detectGradientAngle(samples: List<ColorSample>): Double {
-        // Use multiple methods to find the gradient angle and combine results
-
-        // Method 1: Color difference vectors
-        val angleVotesFromDiffs = detectAngleByColorDifferences(samples)
-
-        // Method 2: Find the axis with maximum color variance
-        val angleFromVariance = detectAngleByMaxVariance(samples)
-
-        // Method 3: Edge detection approach
-        val angleFromEdges = detectAngleByEdges(samples)
-
-        // Combine the results (weighted voting)
-        val combinedAngleVotes = mutableMapOf<Int, Double>()
-
-        angleVotesFromDiffs.forEach { (angle, weight) ->
-            val quantized = quantizeAngle(angle)
-            combinedAngleVotes[quantized] = combinedAngleVotes.getOrDefault(quantized, 0.0) + weight * 2.0
-        }
-
-        val varianceQuantized = quantizeAngle((angleFromVariance * 180 / PI).toInt())
-        combinedAngleVotes[varianceQuantized] = combinedAngleVotes.getOrDefault(varianceQuantized, 0.0) + 1.5
-
-        val edgeQuantized = quantizeAngle((angleFromEdges * 180 / PI).toInt())
-        combinedAngleVotes[edgeQuantized] = combinedAngleVotes.getOrDefault(edgeQuantized, 0.0) + 1.0
-
-        // Find the winning angle
-        val bestAngle = combinedAngleVotes.maxByOrNull { it.value }?.key ?: 0
-        return bestAngle * PI / 180.0
-    }
-
-    private fun detectAngleByColorDifferences(samples: List<ColorSample>): Map<Int, Double> {
-        val angleVotes = mutableMapOf<Int, Double>()
-
-        // Sample pairs efficiently
-        val numPairs = minOf(2000, samples.size * samples.size / 4)
-
-        repeat(numPairs) {
-            val i = (Math.random() * samples.size).toInt()
-            val j = (Math.random() * samples.size).toInt()
-
-            if (i != j) {
-                val s1 = samples[i]
-                val s2 = samples[j]
-
-                val dx = s2.x - s1.x
-                val dy = s2.y - s1.y
-                val distance = sqrt(dx * dx + dy * dy.toDouble())
-
-                if (distance > 20) {
-                    val deltaE = s1.lab.deltaE76(s2.lab)
-
-                    if (deltaE > 0.5) { // Even tiny differences matter for subtle gradients
-                        val angle = atan2(dy.toDouble(), dx.toDouble())
-                        val angleDegrees = (angle * 180 / PI).toInt()
-                        val normalizedAngle = normalizeAngle(angleDegrees)
-
-                        // Weight by color difference per unit distance
-                        val weight = deltaE / sqrt(distance)
-                        angleVotes[normalizedAngle] = angleVotes.getOrDefault(normalizedAngle, 0.0) + weight
-                    }
-                }
-            }
-        }
-
-        return angleVotes
-    }
-
-    private fun detectAngleByMaxVariance(samples: List<ColorSample>): Double {
-        var maxVariance = 0.0
-        var bestAngle = 0.0
-
-        // Test angles from 0 to 180 degrees
-        for (angleDeg in 0 until 180 step 5) {
-            val angle = angleDeg * PI / 180.0
-            val dx = cos(angle)
-            val dy = sin(angle)
-
-            // Project samples onto this axis
-            val projections = samples.map { sample ->
-                val projection = (sample.x - centerX) * dx + (sample.y - centerY) * dy
-                projection to sample.lab
-            }
-
-            // Calculate color variance along this axis
-            val variance = calculateColorVariance(projections)
-
-            if (variance > maxVariance) {
-                maxVariance = variance
-                bestAngle = angle
-            }
-        }
-
-        return bestAngle
-    }
-
-    private fun detectAngleByEdges(samples: List<ColorSample>): Double {
-        // Group samples into spatial buckets and find color transitions
-        val bucketSize = 50
-        val buckets = mutableMapOf<Pair<Int, Int>, MutableList<ColorSample>>()
-
-        samples.forEach { sample ->
-            val bucketX = sample.x / bucketSize
-            val bucketY = sample.y / bucketSize
-            buckets.getOrPut(bucketX to bucketY) { mutableListOf() }.add(sample)
-        }
-
-        val angleVotes = mutableMapOf<Int, Double>()
-
-        // Compare adjacent buckets
-        buckets.forEach { (coord, bucket1) ->
-            val (bx, by) = coord
-
-            // Check all 8 neighbors
-            for (dx in -1..1) {
-                for (dy in -1..1) {
-                    if (dx != 0 || dy != 0) {
-                        val neighborCoord = (bx + dx) to (by + dy)
-                        buckets[neighborCoord]?.let { bucket2 ->
-                            if (bucket1.isNotEmpty() && bucket2.isNotEmpty()) {
-                                val avgColor1 = averageLabColor(bucket1.map { it.lab })
-                                val avgColor2 = averageLabColor(bucket2.map { it.lab })
-                                val deltaE = avgColor1.deltaE76(avgColor2)
-
-                                if (deltaE > 0.5) {
-                                    val angle = atan2(dy.toDouble(), dx.toDouble())
-                                    val angleDegrees = normalizeAngle((angle * 180 / PI).toInt())
-                                    angleVotes[angleDegrees] = angleVotes.getOrDefault(angleDegrees, 0.0) + deltaE
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-
-        val bestAngle = angleVotes.maxByOrNull { it.value }?.key ?: 0
-        return bestAngle * PI / 180.0
-    }
-
-    private fun collectImageSamples(): List<ColorSample> {
-        val samples = mutableListOf<ColorSample>()
-        val totalPixels = width * height
-        val targetSamples = (totalPixels * targetSampleRate).toInt()
-
-        // Calculate step size to achieve target sample rate
-        val step = sqrt(totalPixels.toDouble() / targetSamples).toInt().coerceAtLeast(1)
-
-        for (y in 0 until height step step) {
-            for (x in 0 until width step step) {
-                val color = getPixelColor(x, y)
-                if (color != null && color.alpha > transparencyThreshold) {
+        // Evenly sample the content area
+        for (y in contentBounds.minY..contentBounds.maxY step step) {
+            for (x in contentBounds.minX..contentBounds.maxX step step) {
+                val color = Color(image.getRGB(x, y), true)
+                if (color.alpha > transparencyThreshold) {
                     val rgbColor = Color(color.red, color.green, color.blue)
                     samples.add(ColorSample(x, y, rgbColor, getLabColor(rgbColor)))
                 }
@@ -239,174 +135,227 @@ class LinearGradientReconstructor(private val image: BufferedImage) {
         return samples
     }
 
-    private fun projectSamplesOntoGradientAxis(
-        samples: List<ColorSample>,
-        gradientAngle: Double
-    ): List<Pair<Float, Color>> {
-        // The gradient direction vector
-        val dx = cos(gradientAngle)
-        val dy = sin(gradientAngle)
+    private fun findBestGradientAngle(samples: List<ColorSample>): Pair<Double, AngleScore> {
+        var bestAngle = 0.0
+        var bestScore = AngleScore(0.0, 0.0)
 
-        // Find the extent of the gradient
-        var minProjection = Double.MAX_VALUE
-        var maxProjection = Double.MIN_VALUE
+        // Test angles from 0 to 180 degrees
+        for (angleDeg in 0 until 180 step 5) {
+            val angle = angleDeg * PI / 180.0
+            val score = scoreGradientAngle(samples, angle)
 
+            // Best angle has high variance (color changes) and high consistency (smooth gradient)
+            val combinedScore = score.variance * score.consistency
+            val bestCombined = bestScore.variance * bestScore.consistency
+
+            if (combinedScore > bestCombined) {
+                bestAngle = angle
+                bestScore = score
+            }
+        }
+
+        // Refine around best angle
+        for (angleDeg in -4..4) {
+            val angle = bestAngle + (angleDeg * PI / 180.0)
+            val score = scoreGradientAngle(samples, angle)
+
+            val combinedScore = score.variance * score.consistency
+            val bestCombined = bestScore.variance * bestScore.consistency
+
+            if (combinedScore > bestCombined) {
+                bestAngle = angle
+                bestScore = score
+            }
+        }
+
+        return bestAngle to bestScore
+    }
+
+    private fun scoreGradientAngle(samples: List<ColorSample>, angle: Double): AngleScore {
+        val dx = cos(angle)
+        val dy = sin(angle)
+
+        // Project samples onto this angle
         val projections = samples.map { sample ->
-            // Project point onto gradient axis (perpendicular distance doesn't matter)
-            val projection = (sample.x - centerX) * dx + (sample.y - centerY) * dy
-            minProjection = minOf(minProjection, projection)
-            maxProjection = maxOf(maxProjection, projection)
+            val projection = (sample.x - contentCenterX) * dx + (sample.y - contentCenterY) * dy
+            projection to sample
+        }
+
+        // Sort by projection to get gradient order
+        val sorted = projections.sortedBy { it.first }
+
+        // Calculate variance (how much colors change along this axis)
+        var totalVariance = 0.0
+        val buckets = mutableMapOf<Int, MutableList<LabColor>>()
+
+        // Group into buckets along gradient
+        val numBuckets = 20
+        val minProj = sorted.first().first
+        val maxProj = sorted.last().first
+        val range = maxProj - minProj
+
+        if (range <= 0) return AngleScore(0.0, 0.0)
+
+        sorted.forEach { (proj, sample) ->
+            val bucketIndex = ((proj - minProj) / range * numBuckets).toInt().coerceIn(0, numBuckets - 1)
+            buckets.getOrPut(bucketIndex) { mutableListOf() }.add(sample.lab)
+        }
+
+        // Calculate variance between bucket averages
+        val bucketAverages = buckets.entries
+            .sortedBy { it.key }
+            .map { it.value }
+            .filter { it.isNotEmpty() }
+            .map { averageLabColor(it) }
+
+        if (bucketAverages.size < 2) return AngleScore(0.0, 0.0)
+
+        // Variance: difference between first and last colors
+        totalVariance = bucketAverages.first().deltaE76(bucketAverages.last())
+
+        // Consistency: how smooth is the gradient?
+        var consistency = 1.0
+
+        // Check if colors within each bucket are similar (they should be for a gradient)
+        var totalBucketVariance = 0.0
+        var bucketCount = 0
+
+        buckets.values.forEach { colors ->
+            if (colors.size > 1) {
+                val avg = averageLabColor(colors)
+                val bucketVariance = colors.sumOf { it.deltaE76(avg) } / colors.size
+                totalBucketVariance += bucketVariance
+                bucketCount++
+            }
+        }
+
+        if (bucketCount > 0) {
+            val avgBucketVariance = totalBucketVariance / bucketCount
+            // Lower variance within buckets = higher consistency
+            consistency = 1.0 / (1.0 + avgBucketVariance / 10.0)
+        }
+
+        // Also check for smooth color progression
+        if (bucketAverages.size > 2) {
+            val steps = mutableListOf<Double>()
+            for (i in 1 until bucketAverages.size) {
+                steps.add(bucketAverages[i - 1].deltaE76(bucketAverages[i]))
+            }
+
+            val avgStep = steps.average()
+            val stepVariance = steps.map { (it - avgStep) * (it - avgStep) }.average()
+
+            // Lower step variance = smoother gradient
+            val smoothness = 1.0 / (1.0 + sqrt(stepVariance) / avgStep)
+            consistency *= smoothness
+        }
+
+        return AngleScore(totalVariance, consistency)
+    }
+
+    private fun extractGradientStops(samples: List<ColorSample>, angle: Double): List<GradientStop> {
+        val dx = cos(angle)
+        val dy = sin(angle)
+
+        // Project all samples
+        val projections = samples.map { sample ->
+            val projection = (sample.x - contentCenterX) * dx + (sample.y - contentCenterY) * dy
             projection to sample.color
         }
 
-        // Normalize projections to 0-1 range
-        val range = maxProjection - minProjection
-        return if (range > 0) {
-            projections.map { (projection, color) ->
-                ((projection - minProjection) / range).toFloat() to color
-            }
-        } else {
-            emptyList()
-        }
-    }
-
-    private fun reconstructGradientStops(projectedSamples: List<Pair<Float, Color>>): List<GradientStop> {
-        if (projectedSamples.isEmpty()) return emptyList()
-
-        // Sort by position
-        val sorted = projectedSamples.sortedBy { it.first }
-
-        // Group into bins along the gradient
-        val numBins = 20
-        val binSize = 1.0f / numBins
-        val bins = Array(numBins) { mutableListOf<Color>() }
-
-        sorted.forEach { (position, color) ->
-            val binIndex = (position / binSize).toInt().coerceIn(0, numBins - 1)
-            bins[binIndex].add(color)
-        }
-
-        // Create stops from bins with samples
-        val stops = mutableListOf<GradientStop>()
-
-        bins.forEachIndexed { index, colors ->
-            if (colors.isNotEmpty()) {
-                val position = (index + 0.5f) * binSize
-
-                // Use median color instead of average for better noise resistance
-                val medianColor = if (colors.size == 1) {
-                    colors[0]
-                } else {
-                    // Sort by luminance and pick middle
-                    val sortedColors = colors.sortedBy {
-                        0.299 * it.red + 0.587 * it.green + 0.114 * it.blue
-                    }
-                    sortedColors[sortedColors.size / 2]
-                }
-
-                stops.add(GradientStop(position, medianColor))
-            }
-        }
-
-        // Smooth the gradient stops
-        val smoothedStops = smoothGradientStops(stops)
-
-        // Ensure we have start and end stops
-        val finalStops = mutableListOf<GradientStop>()
-
-        if (smoothedStops.isNotEmpty()) {
-            // Always add 0 and 1 positions
-            finalStops.add(GradientStop(0f, smoothedStops.first().color))
-
-            smoothedStops.forEach { stop ->
-                if (stop.position > 0.05f && stop.position < 0.95f) {
-                    finalStops.add(stop)
-                }
-            }
-
-            finalStops.add(GradientStop(1f, smoothedStops.last().color))
-        }
-
-        return mergeSimilarStops(finalStops)
-    }
-
-    private fun smoothGradientStops(stops: List<GradientStop>): List<GradientStop> {
-        if (stops.size < 3) return stops
-
-        return stops.mapIndexed { index, stop ->
-            when (index) {
-                0, stops.size - 1 -> stop
-                else -> {
-                    // Average with neighbors
-                    val prev = stops[index - 1]
-                    val next = stops[index + 1]
-
-                    val avgRed = (prev.color.red + stop.color.red * 2 + next.color.red) / 4
-                    val avgGreen = (prev.color.green + stop.color.green * 2 + next.color.green) / 4
-                    val avgBlue = (prev.color.blue + stop.color.blue * 2 + next.color.blue) / 4
-
-                    GradientStop(
-                        stop.position,
-                        Color(avgRed.coerceIn(0, 255), avgGreen.coerceIn(0, 255), avgBlue.coerceIn(0, 255))
-                    )
-                }
-            }
-        }
-    }
-
-    private fun mergeSimilarStops(stops: List<GradientStop>): List<GradientStop> {
-        if (stops.size <= 2) return stops
-
-        val merged = mutableListOf<GradientStop>()
-        merged.add(stops[0]) // Always keep start
-
-        for (i in 1 until stops.size - 1) {
-            val prev = merged.last()
-            val curr = stops[i]
-
-            val deltaE = getLabColor(prev.color).deltaE76(getLabColor(curr.color))
-            val posDiff = curr.position - prev.position
-
-            // Keep stop if color is different enough or position is far enough
-            if (deltaE > 3.0 || posDiff > 0.15f) {
-                merged.add(curr)
-            }
-        }
-
-        merged.add(stops.last()) // Always keep end
-
-        return merged
-    }
-
-    private fun calculateColorVariance(projections: List<Pair<Double, LabColor>>): Double {
-        if (projections.isEmpty()) return 0.0
-
-        // Group by position buckets
-        val buckets = mutableMapOf<Int, MutableList<LabColor>>()
-        val numBuckets = 10
-
+        // Find range
         val minProj = projections.minOf { it.first }
         val maxProj = projections.maxOf { it.first }
         val range = maxProj - minProj
 
-        if (range == 0.0) return 0.0
+        if (range <= 0) return emptyList()
 
-        projections.forEach { (proj, lab) ->
-            val bucket = ((proj - minProj) / range * numBuckets).toInt().coerceIn(0, numBuckets - 1)
-            buckets.getOrPut(bucket) { mutableListOf() }.add(lab)
+        // Normalize projections
+        val normalized = projections.map { (proj, color) ->
+            ((proj - minProj) / range).toFloat() to color
         }
 
-        // Calculate variance between buckets
-        var totalVariance = 0.0
-        val bucketAverages = buckets.mapValues { (_, labs) -> averageLabColor(labs) }
+        // Group into bins
+        val numBins = 20
+        val bins = Array(numBins) { mutableListOf<Color>() }
 
-        bucketAverages.values.forEach { lab1 ->
-            bucketAverages.values.forEach { lab2 ->
-                totalVariance += lab1.deltaE76(lab2)
+        normalized.forEach { (position, color) ->
+            val binIndex = (position * numBins).toInt().coerceIn(0, numBins - 1)
+            bins[binIndex].add(color)
+        }
+
+        // Create stops from non-empty bins
+        val stops = mutableListOf<GradientStop>()
+
+        bins.forEachIndexed { index, colors ->
+            if (colors.isNotEmpty()) {
+                val position = index.toFloat() / numBins
+                val avgColor = averageColors(colors)
+                stops.add(GradientStop(position, avgColor))
             }
         }
 
-        return totalVariance
+        if (stops.isEmpty()) return emptyList()
+
+        // Simplify: merge very similar adjacent stops
+        val simplified = mutableListOf<GradientStop>()
+        simplified.add(GradientStop(0f, stops.first().color))
+
+        var lastAdded = stops.first()
+        for (i in 1 until stops.size - 1) {
+            val current = stops[i]
+            val deltaE = getLabColor(lastAdded.color).deltaE76(getLabColor(current.color))
+
+            // Only add if color is different enough
+            if (deltaE > 5.0) {
+                simplified.add(current)
+                lastAdded = current
+            }
+        }
+
+        simplified.add(GradientStop(1f, stops.last().color))
+
+        // If we ended up with too many stops, reduce to the most important ones
+        if (simplified.size > 5) {
+            return reduceStops(simplified, 5)
+        }
+
+        return simplified
+    }
+
+    private fun reduceStops(stops: List<GradientStop>, maxStops: Int): List<GradientStop> {
+        if (stops.size <= maxStops) return stops
+
+        // Always keep first and last
+        val reduced = mutableListOf<GradientStop>()
+        reduced.add(stops.first())
+
+        // Find the most significant color changes
+        val significantStops = stops.subList(1, stops.size - 1)
+            .map { stop ->
+                // Find nearest neighbors
+                val prevStop = stops.filter { it.position < stop.position }.maxByOrNull { it.position }
+                val nextStop = stops.filter { it.position > stop.position }.minByOrNull { it.position }
+
+                val importance = if (prevStop != null && nextStop != null) {
+                    val prevDelta = getLabColor(stop.color).deltaE76(getLabColor(prevStop.color))
+                    val nextDelta = getLabColor(stop.color).deltaE76(getLabColor(nextStop.color))
+                    prevDelta + nextDelta
+                } else {
+                    0.0
+                }
+
+                stop to importance
+            }
+            .sortedByDescending { it.second }
+            .take(maxStops - 2)
+            .map { it.first }
+            .sortedBy { it.position }
+
+        reduced.addAll(significantStops)
+        reduced.add(stops.last())
+
+        return reduced
     }
 
     private fun averageLabColor(labs: List<LabColor>): LabColor {
@@ -419,25 +368,23 @@ class LinearGradientReconstructor(private val image: BufferedImage) {
         return LabColor(avgL, avgA, avgB)
     }
 
-    private fun normalizeAngle(degrees: Int): Int {
-        // Normalize to 0-179 range (180 and 0 are the same)
-        return ((degrees % 180) + 180) % 180
-    }
+    private fun averageColors(colors: List<Color>): Color {
+        if (colors.isEmpty()) return Color.BLACK
 
-    private fun quantizeAngle(degrees: Int, binSize: Int = 5): Int {
-        // Quantize to nearest bin
-        val normalized = normalizeAngle(degrees)
-        return (normalized / binSize) * binSize
-    }
+        // Use LAB space for better averaging
+        val labs = colors.map { getLabColor(it) }
+        val avgLab = averageLabColor(labs)
 
-    private fun getPixelColor(x: Int, y: Int): Color? {
-        if (x < 0 || x >= width || y < 0 || y >= height) return null
+        // Convert back to RGB (simplified - you may want proper LAB to RGB conversion)
+        val avgRed = colors.sumOf { it.red } / colors.size
+        val avgGreen = colors.sumOf { it.green } / colors.size
+        val avgBlue = colors.sumOf { it.blue } / colors.size
 
-        return try {
-            Color(image.getRGB(x, y), true)
-        } catch (e: Exception) {
-            null
-        }
+        return Color(
+            avgRed.coerceIn(0, 255),
+            avgGreen.coerceIn(0, 255),
+            avgBlue.coerceIn(0, 255)
+        )
     }
 
     private fun getLabColor(color: Color): LabColor {

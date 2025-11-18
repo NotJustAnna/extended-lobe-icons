@@ -28,11 +28,12 @@ object Config {
     const val EDGE_SCAN_DIRECTIONS = 16
 
     // Environment checks
-    val IS_DEVELOPMENT = System.getenv("NODE_ENV") == "development" ||
+    var IS_DEVELOPMENT = System.getenv("NODE_ENV") == "development" ||
                          System.getProperty("dev") == "true"
 
     init {
         // Ensure required directories exist
+        WORKING_DIR.deleteRecursively()
         WORKING_DIR.mkdirs()
         OUTPUT_ICONS_DIR.mkdirs()
         CACHE_DIR.mkdirs()

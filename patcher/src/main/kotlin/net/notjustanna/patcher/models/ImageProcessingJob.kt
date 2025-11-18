@@ -35,6 +35,9 @@ class ImageProcessingJob(private val brandDir: File) : Runnable {
             val colorFile = imageFiles.firstOrNull { it.name.contains("-color") }
             val colorDetection = colorFile?.let {
                 try {
+                    if (Config.IS_DEVELOPMENT) {
+                        println("      🔍 Detecting color from ${brandDir.name}...")
+                    }
                     Colorimetry.detect(ImageIO.read(it))
                 } catch (e: Exception) {
                     System.err.println("      ⚠️  Error detecting color from ${colorFile.name}: ${e.message}")

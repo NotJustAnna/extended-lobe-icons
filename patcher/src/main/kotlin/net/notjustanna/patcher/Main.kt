@@ -14,6 +14,8 @@ fun main(args: Array<String>) {
     try {
         println("🚀 Starting icon patcher")
 
+        Config.IS_DEVELOPMENT = args.any { it == "--dev" }
+
         val brandFilter = args.filter { !it.startsWith("--") }.toSet()
 
         // Step 1: Download packages
@@ -106,7 +108,7 @@ private fun generateIndexJson() {
     val indexFile = File(Config.PACKAGES_DIR, "index.json")
     indexFile.writeText(json.encodeToString(rootNode))
     
-    println("✅ Generated ${indexFile.absolutePath}")
+    println("✅ Generated ${indexFile.normalize().absoluteFile.absolutePath}")
 }
 
 /**
