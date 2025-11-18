@@ -1,8 +1,13 @@
 package net.notjustanna.patcher
 
+import kotlinx.serialization.ExperimentalSerializationApi
 import net.notjustanna.patcher.config.Config
 import net.notjustanna.patcher.utils.Processor
 import net.notjustanna.patcher.utils.Downloader
+import kotlinx.serialization.Serializable
+import kotlinx.serialization.encodeToString
+import kotlinx.serialization.json.Json
+import java.io.File
 import kotlin.system.exitProcess
 
 fun main(args: Array<String>) {
@@ -32,6 +37,9 @@ fun main(args: Array<String>) {
 
         // Step 4: Copy to packages
         copyToPackages()
+
+        // Step 5: Generate index.json
+        generateIndexJson()
 
         println("🎉 Icon patching complete!")
         exitProcess(0)
@@ -67,4 +75,51 @@ private fun copyToPackages() {
     }
 
     println("✅ Copy complete")
+}
+
+@Serializable
+data class FileNode(
+    val name: String,
+    val type: String,
+    val children: List<FileNode>? = null
+)
+
+/**
+ * Generate index.json with directory/file structure of packages/
+ */
+@OptIn(ExperimentalSerializationApi::class)
+private fun generateIndexJson() {
+    println("📋 Generating index.json...")
+
+    if (!Config.PACKAGES_DIR.exists()) {
+        println("  ⚠️  Packages directory not found")
+        return
+    }
+
+    val rootNode = buildFileTree(Config.PACKAGES_DIR, Config.PACKAGES_DIR.name)
+    
+    val json = Json {
+        prettyPrint = true
+        prettyPrintIndent = "  "
+    }
+    
+    val indexFile = File(Config.PACKAGES_DIR, "index.json")
+    indexFile.writeText(json.encodeToString(rootNode))
+    
+    println("✅ Generated ${indexFile.absolutePath}")
+}
+
+/**
+ * Recursively build file tree structure
+ */
+private fun buildFileTree(file: File, name: String): FileNode {
+    return if (file.isDirectory) {
+        val children = file.listFiles()
+            ?.sortedWith(compareBy({ it.isFile }, { it.name }))
+            ?.map { buildFileTree(it, it.name) }
+            ?: emptyList()
+        FileNode(name = name, type = "directory", children = children)
+    } else {
+        FileNode(name = name, type = "file")
+    }
 }
