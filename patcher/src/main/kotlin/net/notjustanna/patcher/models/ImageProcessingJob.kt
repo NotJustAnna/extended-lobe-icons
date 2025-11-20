@@ -43,7 +43,7 @@ class ImageProcessingJob(private val brandDir: File) : Runnable {
                     System.err.println("      ⚠️  Error detecting color from ${colorFile.name}: ${e.message}")
                     null
                 }
-            }
+            } ?: brandColorFallbacks[brandName.lowercase()]
 
             if (colorFile != null) {
                 processImage(colorFile, null, outputIconsDir)
@@ -119,5 +119,18 @@ class ImageProcessingJob(private val brandDir: File) : Runnable {
 
             else -> null
         }
+    }
+
+    companion object {
+        private val brandColorFallbacks = mapOf(
+            "openai" to ColorDetection(
+                type = DetectionType.SOLID,
+                solidColor = Color(0x00A67E)
+            ),
+            "openrouter" to ColorDetection(
+                type = DetectionType.SOLID,
+                solidColor = Color(0x94A3B8)
+            ),
+        )
     }
 }

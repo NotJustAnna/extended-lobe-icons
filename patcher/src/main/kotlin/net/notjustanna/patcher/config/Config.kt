@@ -19,7 +19,7 @@ object Config {
     val IGNORE_PROPERTIES = listOf("text", "brand", "cn")
 
     // Circle fitting configuration for avatar images
-    const val CIRCLE_FIT_PADDING_PERCENTAGE = 10
+    const val CIRCLE_FIT_PADDING_PERCENTAGE = 20
     const val CIRCLE_FIT_MIN_ALPHA_TOLERANCE = 127
 
     // Gradient detection configuration
