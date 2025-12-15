@@ -29,7 +29,7 @@ jobs:
 
       - name: Run patcher
         run: |
-          cd kotlin-patcher
+          cd patcher
           ./gradlew run
 
       - name: Check for changes
