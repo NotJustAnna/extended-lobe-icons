@@ -35,19 +35,15 @@
               "type": "file"
             },
             {
-              "name": "dark-color-avatarfit.png",
-              "type": "file"
-            },
-            {
               "name": "dark-color-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -56,22 +52,6 @@
             },
             {
               "name": "dark-color.webp",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg-avatarfit.png",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg-avatarfit.webp",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg.png",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg.webp",
               "type": "file"
             },
             {
@@ -115,35 +95,11 @@
               "type": "file"
             },
             {
-              "name": "light-color-avatarfit.png",
-              "type": "file"
-            },
-            {
-              "name": "light-color-avatarfit.webp",
-              "type": "file"
-            },
-            {
               "name": "light-color.png",
               "type": "file"
             },
             {
               "name": "light-color.webp",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg-avatarfit.png",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg-avatarfit.webp",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg.png",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg.webp",
               "type": "file"
             },
             {
@@ -193,19 +149,15 @@
               "type": "file"
             },
             {
-              "name": "dark-color-avatarfit.png",
-              "type": "file"
-            },
-            {
               "name": "dark-color-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -214,22 +166,6 @@
             },
             {
               "name": "dark-color.webp",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg-avatarfit.png",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg-avatarfit.webp",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg.png",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg.webp",
               "type": "file"
             },
             {
@@ -273,35 +209,11 @@
               "type": "file"
             },
             {
-              "name": "light-color-avatarfit.png",
-              "type": "file"
-            },
-            {
-              "name": "light-color-avatarfit.webp",
-              "type": "file"
-            },
-            {
               "name": "light-color.png",
               "type": "file"
             },
             {
               "name": "light-color.webp",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg-avatarfit.png",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg-avatarfit.webp",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg.png",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg.webp",
               "type": "file"
             },
             {
@@ -555,15 +467,15 @@
               "type": "file"
             },
             {
-              "name": "dark-color-avatarfit.png",
+              "name": "dark-color-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -669,15 +581,15 @@
               "type": "file"
             },
             {
-              "name": "dark-color-avatarfit.png",
+              "name": "dark-color-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -783,15 +695,15 @@
               "type": "file"
             },
             {
-              "name": "dark-color-avatarfit.png",
+              "name": "dark-color-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -897,15 +809,15 @@
               "type": "file"
             },
             {
-              "name": "dark-color-avatarfit.png",
+              "name": "dark-color-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -1011,15 +923,15 @@
               "type": "file"
             },
             {
-              "name": "dark-color-avatarfit.png",
+              "name": "dark-color-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -1211,19 +1123,15 @@
               "type": "file"
             },
             {
-              "name": "dark-color-avatarfit.png",
-              "type": "file"
-            },
-            {
               "name": "dark-color-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -1232,22 +1140,6 @@
             },
             {
               "name": "dark-color.webp",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg-avatarfit.png",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg-avatarfit.webp",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg.png",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg.webp",
               "type": "file"
             },
             {
@@ -1291,35 +1183,11 @@
               "type": "file"
             },
             {
-              "name": "light-color-avatarfit.png",
-              "type": "file"
-            },
-            {
-              "name": "light-color-avatarfit.webp",
-              "type": "file"
-            },
-            {
               "name": "light-color.png",
               "type": "file"
             },
             {
               "name": "light-color.webp",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg-avatarfit.png",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg-avatarfit.webp",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg.png",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg.webp",
               "type": "file"
             },
             {
@@ -1479,11 +1347,11 @@
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -1661,19 +1529,15 @@
               "type": "file"
             },
             {
-              "name": "dark-color-avatarfit.png",
-              "type": "file"
-            },
-            {
               "name": "dark-color-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -1682,22 +1546,6 @@
             },
             {
               "name": "dark-color.webp",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg-avatarfit.png",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg-avatarfit.webp",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg.png",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg.webp",
               "type": "file"
             },
             {
@@ -1749,35 +1597,11 @@
               "type": "file"
             },
             {
-              "name": "light-color-avatarfit.png",
-              "type": "file"
-            },
-            {
-              "name": "light-color-avatarfit.webp",
-              "type": "file"
-            },
-            {
               "name": "light-color.png",
               "type": "file"
             },
             {
               "name": "light-color.webp",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg-avatarfit.png",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg-avatarfit.webp",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg.png",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg.webp",
               "type": "file"
             },
             {
@@ -1859,11 +1683,11 @@
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -2127,19 +1951,15 @@
               "type": "file"
             },
             {
-              "name": "dark-color-avatarfit.png",
-              "type": "file"
-            },
-            {
               "name": "dark-color-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -2148,22 +1968,6 @@
             },
             {
               "name": "dark-color.webp",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg-avatarfit.png",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg-avatarfit.webp",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg.png",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg.webp",
               "type": "file"
             },
             {
@@ -2207,14 +2011,6 @@
               "type": "file"
             },
             {
-              "name": "light-color-avatarfit.png",
-              "type": "file"
-            },
-            {
-              "name": "light-color-avatarfit.webp",
-              "type": "file"
-            },
-            {
               "name": "light-color.png",
               "type": "file"
             },
@@ -2223,19 +2019,89 @@
               "type": "file"
             },
             {
-              "name": "light-colorbg-avatarfit.png",
+              "name": "light-text.png",
               "type": "file"
             },
             {
-              "name": "light-colorbg-avatarfit.webp",
+              "name": "light-text.webp",
               "type": "file"
             },
             {
-              "name": "light-colorbg.png",
+              "name": "light.png",
               "type": "file"
             },
             {
-              "name": "light-colorbg.webp",
+              "name": "light.webp",
+              "type": "file"
+            }
+          ]
+        },
+        {
+          "name": "apple",
+          "type": "directory",
+          "children": [
+            {
+              "name": "dark-avatarfit.png",
+              "type": "file"
+            },
+            {
+              "name": "dark-avatarfit.webp",
+              "type": "file"
+            },
+            {
+              "name": "dark-bg-avatarfit.png",
+              "type": "file"
+            },
+            {
+              "name": "dark-bg-avatarfit.webp",
+              "type": "file"
+            },
+            {
+              "name": "dark-bg.png",
+              "type": "file"
+            },
+            {
+              "name": "dark-bg.webp",
+              "type": "file"
+            },
+            {
+              "name": "dark-text.png",
+              "type": "file"
+            },
+            {
+              "name": "dark-text.webp",
+              "type": "file"
+            },
+            {
+              "name": "dark.png",
+              "type": "file"
+            },
+            {
+              "name": "dark.webp",
+              "type": "file"
+            },
+            {
+              "name": "light-avatarfit.png",
+              "type": "file"
+            },
+            {
+              "name": "light-avatarfit.webp",
+              "type": "file"
+            },
+            {
+              "name": "light-bg-avatarfit.png",
+              "type": "file"
+            },
+            {
+              "name": "light-bg-avatarfit.webp",
+              "type": "file"
+            },
+            {
+              "name": "light-bg.png",
+              "type": "file"
+            },
+            {
+              "name": "light-bg.webp",
               "type": "file"
             },
             {
@@ -2285,15 +2151,15 @@
               "type": "file"
             },
             {
-              "name": "dark-color-avatarfit.png",
+              "name": "dark-color-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -2399,19 +2265,15 @@
               "type": "file"
             },
             {
-              "name": "dark-color-avatarfit.png",
-              "type": "file"
-            },
-            {
               "name": "dark-color-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -2420,22 +2282,6 @@
             },
             {
               "name": "dark-color.webp",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg-avatarfit.png",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg-avatarfit.webp",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg.png",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg.webp",
               "type": "file"
             },
             {
@@ -2479,35 +2325,11 @@
               "type": "file"
             },
             {
-              "name": "light-color-avatarfit.png",
-              "type": "file"
-            },
-            {
-              "name": "light-color-avatarfit.webp",
-              "type": "file"
-            },
-            {
               "name": "light-color.png",
               "type": "file"
             },
             {
               "name": "light-color.webp",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg-avatarfit.png",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg-avatarfit.webp",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg.png",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg.webp",
               "type": "file"
             },
             {
@@ -2573,15 +2395,15 @@
               "type": "file"
             },
             {
-              "name": "dark-color-avatarfit.png",
+              "name": "dark-color-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -2703,19 +2525,15 @@
               "type": "file"
             },
             {
-              "name": "dark-color-avatarfit.png",
-              "type": "file"
-            },
-            {
               "name": "dark-color-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -2724,22 +2542,6 @@
             },
             {
               "name": "dark-color.webp",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg-avatarfit.png",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg-avatarfit.webp",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg.png",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg.webp",
               "type": "file"
             },
             {
@@ -2783,35 +2585,11 @@
               "type": "file"
             },
             {
-              "name": "light-color-avatarfit.png",
-              "type": "file"
-            },
-            {
-              "name": "light-color-avatarfit.webp",
-              "type": "file"
-            },
-            {
               "name": "light-color.png",
               "type": "file"
             },
             {
               "name": "light-color.webp",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg-avatarfit.png",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg-avatarfit.webp",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg.png",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg.webp",
               "type": "file"
             },
             {
@@ -2861,15 +2639,15 @@
               "type": "file"
             },
             {
-              "name": "dark-color-avatarfit.png",
+              "name": "dark-color-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -2975,15 +2753,15 @@
               "type": "file"
             },
             {
-              "name": "dark-color-avatarfit.png",
+              "name": "dark-color-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -3183,11 +2961,11 @@
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -3349,19 +3127,15 @@
               "type": "file"
             },
             {
-              "name": "dark-color-avatarfit.png",
-              "type": "file"
-            },
-            {
               "name": "dark-color-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -3370,22 +3144,6 @@
             },
             {
               "name": "dark-color.webp",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg-avatarfit.png",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg-avatarfit.webp",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg.png",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg.webp",
               "type": "file"
             },
             {
@@ -3453,35 +3211,11 @@
               "type": "file"
             },
             {
-              "name": "light-color-avatarfit.png",
-              "type": "file"
-            },
-            {
-              "name": "light-color-avatarfit.webp",
-              "type": "file"
-            },
-            {
               "name": "light-color.png",
               "type": "file"
             },
             {
               "name": "light-color.webp",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg-avatarfit.png",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg-avatarfit.webp",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg.png",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg.webp",
               "type": "file"
             },
             {
@@ -3539,15 +3273,15 @@
               "type": "file"
             },
             {
-              "name": "dark-color-avatarfit.png",
+              "name": "dark-color-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -3653,15 +3387,15 @@
               "type": "file"
             },
             {
-              "name": "dark-color-avatarfit.png",
+              "name": "dark-color-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -3861,11 +3595,11 @@
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -4097,19 +3831,15 @@
               "type": "file"
             },
             {
-              "name": "dark-color-avatarfit.png",
-              "type": "file"
-            },
-            {
               "name": "dark-color-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -4118,22 +3848,6 @@
             },
             {
               "name": "dark-color.webp",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg-avatarfit.png",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg-avatarfit.webp",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg.png",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg.webp",
               "type": "file"
             },
             {
@@ -4177,35 +3891,11 @@
               "type": "file"
             },
             {
-              "name": "light-color-avatarfit.png",
-              "type": "file"
-            },
-            {
-              "name": "light-color-avatarfit.webp",
-              "type": "file"
-            },
-            {
               "name": "light-color.png",
               "type": "file"
             },
             {
               "name": "light-color.webp",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg-avatarfit.png",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg-avatarfit.webp",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg.png",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg.webp",
               "type": "file"
             },
             {
@@ -4341,15 +4031,15 @@
               "type": "file"
             },
             {
-              "name": "dark-color-avatarfit.png",
+              "name": "dark-color-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -4463,11 +4153,11 @@
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -4629,15 +4319,15 @@
               "type": "file"
             },
             {
-              "name": "dark-color-avatarfit.png",
+              "name": "dark-color-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -4877,15 +4567,15 @@
               "type": "file"
             },
             {
-              "name": "dark-color-avatarfit.png",
+              "name": "dark-color-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -5023,15 +4713,15 @@
               "type": "file"
             },
             {
-              "name": "dark-color-avatarfit.png",
+              "name": "dark-color-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -5161,11 +4851,11 @@
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -5311,15 +5001,15 @@
               "type": "file"
             },
             {
-              "name": "dark-color-avatarfit.png",
+              "name": "dark-color-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -5441,19 +5131,15 @@
               "type": "file"
             },
             {
-              "name": "dark-color-avatarfit.png",
-              "type": "file"
-            },
-            {
               "name": "dark-color-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -5462,22 +5148,6 @@
             },
             {
               "name": "dark-color.webp",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg-avatarfit.png",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg-avatarfit.webp",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg.png",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg.webp",
               "type": "file"
             },
             {
@@ -5521,35 +5191,11 @@
               "type": "file"
             },
             {
-              "name": "light-color-avatarfit.png",
-              "type": "file"
-            },
-            {
-              "name": "light-color-avatarfit.webp",
-              "type": "file"
-            },
-            {
               "name": "light-color.png",
               "type": "file"
             },
             {
               "name": "light-color.webp",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg-avatarfit.png",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg-avatarfit.webp",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg.png",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg.webp",
               "type": "file"
             },
             {
@@ -5771,15 +5417,15 @@
               "type": "file"
             },
             {
-              "name": "dark-color-avatarfit.png",
+              "name": "dark-color-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -5885,15 +5531,15 @@
               "type": "file"
             },
             {
-              "name": "dark-color-avatarfit.png",
+              "name": "dark-color-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -5999,15 +5645,15 @@
               "type": "file"
             },
             {
-              "name": "dark-color-avatarfit.png",
+              "name": "dark-color-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -6113,15 +5759,15 @@
               "type": "file"
             },
             {
-              "name": "dark-color-avatarfit.png",
+              "name": "dark-color-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -6227,15 +5873,15 @@
               "type": "file"
             },
             {
-              "name": "dark-color-avatarfit.png",
+              "name": "dark-color-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -6341,15 +5987,15 @@
               "type": "file"
             },
             {
-              "name": "dark-color-avatarfit.png",
+              "name": "dark-color-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -6455,15 +6101,15 @@
               "type": "file"
             },
             {
-              "name": "dark-color-avatarfit.png",
+              "name": "dark-color-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -6569,19 +6215,15 @@
               "type": "file"
             },
             {
-              "name": "dark-color-avatarfit.png",
-              "type": "file"
-            },
-            {
               "name": "dark-color-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -6590,22 +6232,6 @@
             },
             {
               "name": "dark-color.webp",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg-avatarfit.png",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg-avatarfit.webp",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg.png",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg.webp",
               "type": "file"
             },
             {
@@ -6649,35 +6275,11 @@
               "type": "file"
             },
             {
-              "name": "light-color-avatarfit.png",
-              "type": "file"
-            },
-            {
-              "name": "light-color-avatarfit.webp",
-              "type": "file"
-            },
-            {
               "name": "light-color.png",
               "type": "file"
             },
             {
               "name": "light-color.webp",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg-avatarfit.png",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg-avatarfit.webp",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg.png",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg.webp",
               "type": "file"
             },
             {
@@ -6727,15 +6329,15 @@
               "type": "file"
             },
             {
-              "name": "dark-color-avatarfit.png",
+              "name": "dark-color-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -6841,15 +6443,15 @@
               "type": "file"
             },
             {
-              "name": "dark-color-avatarfit.png",
+              "name": "dark-color-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -6955,15 +6557,15 @@
               "type": "file"
             },
             {
-              "name": "dark-color-avatarfit.png",
+              "name": "dark-color-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -7069,19 +6671,15 @@
               "type": "file"
             },
             {
-              "name": "dark-color-avatarfit.png",
-              "type": "file"
-            },
-            {
               "name": "dark-color-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -7090,22 +6688,6 @@
             },
             {
               "name": "dark-color.webp",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg-avatarfit.png",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg-avatarfit.webp",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg.png",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg.webp",
               "type": "file"
             },
             {
@@ -7149,35 +6731,11 @@
               "type": "file"
             },
             {
-              "name": "light-color-avatarfit.png",
-              "type": "file"
-            },
-            {
-              "name": "light-color-avatarfit.webp",
-              "type": "file"
-            },
-            {
               "name": "light-color.png",
               "type": "file"
             },
             {
               "name": "light-color.webp",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg-avatarfit.png",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg-avatarfit.webp",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg.png",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg.webp",
               "type": "file"
             },
             {
@@ -7329,15 +6887,15 @@
               "type": "file"
             },
             {
-              "name": "dark-color-avatarfit.png",
+              "name": "dark-color-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -7467,11 +7025,11 @@
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -7703,15 +7261,15 @@
               "type": "file"
             },
             {
-              "name": "dark-color-avatarfit.png",
+              "name": "dark-color-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -7833,19 +7391,15 @@
               "type": "file"
             },
             {
-              "name": "dark-color-avatarfit.png",
-              "type": "file"
-            },
-            {
               "name": "dark-color-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -7854,22 +7408,6 @@
             },
             {
               "name": "dark-color.webp",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg-avatarfit.png",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg-avatarfit.webp",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg.png",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg.webp",
               "type": "file"
             },
             {
@@ -7929,35 +7467,11 @@
               "type": "file"
             },
             {
-              "name": "light-color-avatarfit.png",
-              "type": "file"
-            },
-            {
-              "name": "light-color-avatarfit.webp",
-              "type": "file"
-            },
-            {
               "name": "light-color.png",
               "type": "file"
             },
             {
               "name": "light-color.webp",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg-avatarfit.png",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg-avatarfit.webp",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg.png",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg.webp",
               "type": "file"
             },
             {
@@ -8093,15 +7607,15 @@
               "type": "file"
             },
             {
-              "name": "dark-color-avatarfit.png",
+              "name": "dark-color-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -8207,19 +7721,15 @@
               "type": "file"
             },
             {
-              "name": "dark-color-avatarfit.png",
-              "type": "file"
-            },
-            {
               "name": "dark-color-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -8228,22 +7738,6 @@
             },
             {
               "name": "dark-color.webp",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg-avatarfit.png",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg-avatarfit.webp",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg.png",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg.webp",
               "type": "file"
             },
             {
@@ -8287,35 +7781,11 @@
               "type": "file"
             },
             {
-              "name": "light-color-avatarfit.png",
-              "type": "file"
-            },
-            {
-              "name": "light-color-avatarfit.webp",
-              "type": "file"
-            },
-            {
               "name": "light-color.png",
               "type": "file"
             },
             {
               "name": "light-color.webp",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg-avatarfit.png",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg-avatarfit.webp",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg.png",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg.webp",
               "type": "file"
             },
             {
@@ -8365,19 +7835,15 @@
               "type": "file"
             },
             {
-              "name": "dark-color-avatarfit.png",
-              "type": "file"
-            },
-            {
               "name": "dark-color-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -8386,22 +7852,6 @@
             },
             {
               "name": "dark-color.webp",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg-avatarfit.png",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg-avatarfit.webp",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg.png",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg.webp",
               "type": "file"
             },
             {
@@ -8445,35 +7895,11 @@
               "type": "file"
             },
             {
-              "name": "light-color-avatarfit.png",
-              "type": "file"
-            },
-            {
-              "name": "light-color-avatarfit.webp",
-              "type": "file"
-            },
-            {
               "name": "light-color.png",
               "type": "file"
             },
             {
               "name": "light-color.webp",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg-avatarfit.png",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg-avatarfit.webp",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg.png",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg.webp",
               "type": "file"
             },
             {
@@ -8523,19 +7949,15 @@
               "type": "file"
             },
             {
-              "name": "dark-color-avatarfit.png",
-              "type": "file"
-            },
-            {
               "name": "dark-color-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -8544,22 +7966,6 @@
             },
             {
               "name": "dark-color.webp",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg-avatarfit.png",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg-avatarfit.webp",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg.png",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg.webp",
               "type": "file"
             },
             {
@@ -8603,35 +8009,11 @@
               "type": "file"
             },
             {
-              "name": "light-color-avatarfit.png",
-              "type": "file"
-            },
-            {
-              "name": "light-color-avatarfit.webp",
-              "type": "file"
-            },
-            {
               "name": "light-color.png",
               "type": "file"
             },
             {
               "name": "light-color.webp",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg-avatarfit.png",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg-avatarfit.webp",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg.png",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg.webp",
               "type": "file"
             },
             {
@@ -8681,19 +8063,15 @@
               "type": "file"
             },
             {
-              "name": "dark-color-avatarfit.png",
-              "type": "file"
-            },
-            {
               "name": "dark-color-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -8702,22 +8080,6 @@
             },
             {
               "name": "dark-color.webp",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg-avatarfit.png",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg-avatarfit.webp",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg.png",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg.webp",
               "type": "file"
             },
             {
@@ -8761,35 +8123,11 @@
               "type": "file"
             },
             {
-              "name": "light-color-avatarfit.png",
-              "type": "file"
-            },
-            {
-              "name": "light-color-avatarfit.webp",
-              "type": "file"
-            },
-            {
               "name": "light-color.png",
               "type": "file"
             },
             {
               "name": "light-color.webp",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg-avatarfit.png",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg-avatarfit.webp",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg.png",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg.webp",
               "type": "file"
             },
             {
@@ -8839,15 +8177,15 @@
               "type": "file"
             },
             {
-              "name": "dark-color-avatarfit.png",
+              "name": "dark-color-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -8953,15 +8291,15 @@
               "type": "file"
             },
             {
-              "name": "dark-color-avatarfit.png",
+              "name": "dark-color-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -9153,15 +8491,15 @@
               "type": "file"
             },
             {
-              "name": "dark-color-avatarfit.png",
+              "name": "dark-color-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -9525,19 +8863,15 @@
               "type": "file"
             },
             {
-              "name": "dark-color-avatarfit.png",
-              "type": "file"
-            },
-            {
               "name": "dark-color-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -9546,22 +8880,6 @@
             },
             {
               "name": "dark-color.webp",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg-avatarfit.png",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg-avatarfit.webp",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg.png",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg.webp",
               "type": "file"
             },
             {
@@ -9605,35 +8923,11 @@
               "type": "file"
             },
             {
-              "name": "light-color-avatarfit.png",
-              "type": "file"
-            },
-            {
-              "name": "light-color-avatarfit.webp",
-              "type": "file"
-            },
-            {
               "name": "light-color.png",
               "type": "file"
             },
             {
               "name": "light-color.webp",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg-avatarfit.png",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg-avatarfit.webp",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg.png",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg.webp",
               "type": "file"
             },
             {
@@ -9683,19 +8977,15 @@
               "type": "file"
             },
             {
-              "name": "dark-color-avatarfit.png",
-              "type": "file"
-            },
-            {
               "name": "dark-color-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -9704,22 +8994,6 @@
             },
             {
               "name": "dark-color.webp",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg-avatarfit.png",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg-avatarfit.webp",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg.png",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg.webp",
               "type": "file"
             },
             {
@@ -9763,35 +9037,11 @@
               "type": "file"
             },
             {
-              "name": "light-color-avatarfit.png",
-              "type": "file"
-            },
-            {
-              "name": "light-color-avatarfit.webp",
-              "type": "file"
-            },
-            {
               "name": "light-color.png",
               "type": "file"
             },
             {
               "name": "light-color.webp",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg-avatarfit.png",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg-avatarfit.webp",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg.png",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg.webp",
               "type": "file"
             },
             {
@@ -9849,11 +9099,11 @@
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -9999,19 +9249,15 @@
               "type": "file"
             },
             {
-              "name": "dark-color-avatarfit.png",
-              "type": "file"
-            },
-            {
               "name": "dark-color-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -10020,22 +9266,6 @@
             },
             {
               "name": "dark-color.webp",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg-avatarfit.png",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg-avatarfit.webp",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg.png",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg.webp",
               "type": "file"
             },
             {
@@ -10079,35 +9309,11 @@
               "type": "file"
             },
             {
-              "name": "light-color-avatarfit.png",
-              "type": "file"
-            },
-            {
-              "name": "light-color-avatarfit.webp",
-              "type": "file"
-            },
-            {
               "name": "light-color.png",
               "type": "file"
             },
             {
               "name": "light-color.webp",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg-avatarfit.png",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg-avatarfit.webp",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg.png",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg.webp",
               "type": "file"
             },
             {
@@ -10157,15 +9363,15 @@
               "type": "file"
             },
             {
-              "name": "dark-color-avatarfit.png",
+              "name": "dark-color-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -10271,19 +9477,15 @@
               "type": "file"
             },
             {
-              "name": "dark-color-avatarfit.png",
-              "type": "file"
-            },
-            {
               "name": "dark-color-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -10292,22 +9494,6 @@
             },
             {
               "name": "dark-color.webp",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg-avatarfit.png",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg-avatarfit.webp",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg.png",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg.webp",
               "type": "file"
             },
             {
@@ -10351,35 +9537,11 @@
               "type": "file"
             },
             {
-              "name": "light-color-avatarfit.png",
-              "type": "file"
-            },
-            {
-              "name": "light-color-avatarfit.webp",
-              "type": "file"
-            },
-            {
               "name": "light-color.png",
               "type": "file"
             },
             {
               "name": "light-color.webp",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg-avatarfit.png",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg-avatarfit.webp",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg.png",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg.webp",
               "type": "file"
             },
             {
@@ -10859,15 +10021,15 @@
               "type": "file"
             },
             {
-              "name": "dark-color-avatarfit.png",
+              "name": "dark-color-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -10981,11 +10143,11 @@
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -11569,11 +10731,11 @@
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -11735,15 +10897,15 @@
               "type": "file"
             },
             {
-              "name": "dark-color-avatarfit.png",
+              "name": "dark-color-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -11865,15 +11027,15 @@
               "type": "file"
             },
             {
-              "name": "dark-color-avatarfit.png",
+              "name": "dark-color-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -12065,15 +11227,15 @@
               "type": "file"
             },
             {
-              "name": "dark-color-avatarfit.png",
+              "name": "dark-color-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -12179,19 +11341,15 @@
               "type": "file"
             },
             {
-              "name": "dark-color-avatarfit.png",
-              "type": "file"
-            },
-            {
               "name": "dark-color-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -12200,22 +11358,6 @@
             },
             {
               "name": "dark-color.webp",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg-avatarfit.png",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg-avatarfit.webp",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg.png",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg.webp",
               "type": "file"
             },
             {
@@ -12259,35 +11401,11 @@
               "type": "file"
             },
             {
-              "name": "light-color-avatarfit.png",
-              "type": "file"
-            },
-            {
-              "name": "light-color-avatarfit.webp",
-              "type": "file"
-            },
-            {
               "name": "light-color.png",
               "type": "file"
             },
             {
               "name": "light-color.webp",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg-avatarfit.png",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg-avatarfit.webp",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg.png",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg.webp",
               "type": "file"
             },
             {
@@ -12517,11 +11635,11 @@
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -12839,15 +11957,15 @@
               "type": "file"
             },
             {
-              "name": "dark-color-avatarfit.png",
+              "name": "dark-color-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -12953,19 +12071,15 @@
               "type": "file"
             },
             {
-              "name": "dark-color-avatarfit.png",
-              "type": "file"
-            },
-            {
               "name": "dark-color-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -12974,22 +12088,6 @@
             },
             {
               "name": "dark-color.webp",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg-avatarfit.png",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg-avatarfit.webp",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg.png",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg.webp",
               "type": "file"
             },
             {
@@ -13041,35 +12139,11 @@
               "type": "file"
             },
             {
-              "name": "light-color-avatarfit.png",
-              "type": "file"
-            },
-            {
-              "name": "light-color-avatarfit.webp",
-              "type": "file"
-            },
-            {
               "name": "light-color.png",
               "type": "file"
             },
             {
               "name": "light-color.webp",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg-avatarfit.png",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg-avatarfit.webp",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg.png",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg.webp",
               "type": "file"
             },
             {
@@ -13127,19 +12201,15 @@
               "type": "file"
             },
             {
-              "name": "dark-color-avatarfit.png",
-              "type": "file"
-            },
-            {
               "name": "dark-color-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -13148,22 +12218,6 @@
             },
             {
               "name": "dark-color.webp",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg-avatarfit.png",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg-avatarfit.webp",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg.png",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg.webp",
               "type": "file"
             },
             {
@@ -13215,35 +12269,11 @@
               "type": "file"
             },
             {
-              "name": "light-color-avatarfit.png",
-              "type": "file"
-            },
-            {
-              "name": "light-color-avatarfit.webp",
-              "type": "file"
-            },
-            {
               "name": "light-color.png",
               "type": "file"
             },
             {
               "name": "light-color.webp",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg-avatarfit.png",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg-avatarfit.webp",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg.png",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg.webp",
               "type": "file"
             },
             {
@@ -13301,15 +12331,15 @@
               "type": "file"
             },
             {
-              "name": "dark-color-avatarfit.png",
+              "name": "dark-color-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -13415,15 +12445,15 @@
               "type": "file"
             },
             {
-              "name": "dark-color-avatarfit.png",
+              "name": "dark-color-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -13529,19 +12559,15 @@
               "type": "file"
             },
             {
-              "name": "dark-color-avatarfit.png",
-              "type": "file"
-            },
-            {
               "name": "dark-color-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -13550,22 +12576,6 @@
             },
             {
               "name": "dark-color.webp",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg-avatarfit.png",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg-avatarfit.webp",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg.png",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg.webp",
               "type": "file"
             },
             {
@@ -13609,35 +12619,11 @@
               "type": "file"
             },
             {
-              "name": "light-color-avatarfit.png",
-              "type": "file"
-            },
-            {
-              "name": "light-color-avatarfit.webp",
-              "type": "file"
-            },
-            {
               "name": "light-color.png",
               "type": "file"
             },
             {
               "name": "light-color.webp",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg-avatarfit.png",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg-avatarfit.webp",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg.png",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg.webp",
               "type": "file"
             },
             {
@@ -13859,19 +12845,15 @@
               "type": "file"
             },
             {
-              "name": "dark-color-avatarfit.png",
-              "type": "file"
-            },
-            {
               "name": "dark-color-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -13880,22 +12862,6 @@
             },
             {
               "name": "dark-color.webp",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg-avatarfit.png",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg-avatarfit.webp",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg.png",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg.webp",
               "type": "file"
             },
             {
@@ -13939,35 +12905,11 @@
               "type": "file"
             },
             {
-              "name": "light-color-avatarfit.png",
-              "type": "file"
-            },
-            {
-              "name": "light-color-avatarfit.webp",
-              "type": "file"
-            },
-            {
               "name": "light-color.png",
               "type": "file"
             },
             {
               "name": "light-color.webp",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg-avatarfit.png",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg-avatarfit.webp",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg.png",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg.webp",
               "type": "file"
             },
             {
@@ -14103,19 +13045,15 @@
               "type": "file"
             },
             {
-              "name": "dark-color-avatarfit.png",
-              "type": "file"
-            },
-            {
               "name": "dark-color-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -14124,22 +13062,6 @@
             },
             {
               "name": "dark-color.webp",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg-avatarfit.png",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg-avatarfit.webp",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg.png",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg.webp",
               "type": "file"
             },
             {
@@ -14183,35 +13105,11 @@
               "type": "file"
             },
             {
-              "name": "light-color-avatarfit.png",
-              "type": "file"
-            },
-            {
-              "name": "light-color-avatarfit.webp",
-              "type": "file"
-            },
-            {
               "name": "light-color.png",
               "type": "file"
             },
             {
               "name": "light-color.webp",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg-avatarfit.png",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg-avatarfit.webp",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg.png",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg.webp",
               "type": "file"
             },
             {
@@ -14261,15 +13159,15 @@
               "type": "file"
             },
             {
-              "name": "dark-color-avatarfit.png",
+              "name": "dark-color-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -14477,19 +13375,15 @@
               "type": "file"
             },
             {
-              "name": "dark-color-avatarfit.png",
-              "type": "file"
-            },
-            {
               "name": "dark-color-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -14498,22 +13392,6 @@
             },
             {
               "name": "dark-color.webp",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg-avatarfit.png",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg-avatarfit.webp",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg.png",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg.webp",
               "type": "file"
             },
             {
@@ -14557,35 +13435,11 @@
               "type": "file"
             },
             {
-              "name": "light-color-avatarfit.png",
-              "type": "file"
-            },
-            {
-              "name": "light-color-avatarfit.webp",
-              "type": "file"
-            },
-            {
               "name": "light-color.png",
               "type": "file"
             },
             {
               "name": "light-color.webp",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg-avatarfit.png",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg-avatarfit.webp",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg.png",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg.webp",
               "type": "file"
             },
             {
@@ -14635,15 +13489,15 @@
               "type": "file"
             },
             {
-              "name": "dark-color-avatarfit.png",
+              "name": "dark-color-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -14807,92 +13661,6 @@
           ]
         },
         {
-          "name": "kera",
-          "type": "directory",
-          "children": [
-            {
-              "name": "dark-avatarfit.png",
-              "type": "file"
-            },
-            {
-              "name": "dark-avatarfit.webp",
-              "type": "file"
-            },
-            {
-              "name": "dark-bg-avatarfit.png",
-              "type": "file"
-            },
-            {
-              "name": "dark-bg-avatarfit.webp",
-              "type": "file"
-            },
-            {
-              "name": "dark-bg.png",
-              "type": "file"
-            },
-            {
-              "name": "dark-bg.webp",
-              "type": "file"
-            },
-            {
-              "name": "dark-text.png",
-              "type": "file"
-            },
-            {
-              "name": "dark-text.webp",
-              "type": "file"
-            },
-            {
-              "name": "dark.png",
-              "type": "file"
-            },
-            {
-              "name": "dark.webp",
-              "type": "file"
-            },
-            {
-              "name": "light-avatarfit.png",
-              "type": "file"
-            },
-            {
-              "name": "light-avatarfit.webp",
-              "type": "file"
-            },
-            {
-              "name": "light-bg-avatarfit.png",
-              "type": "file"
-            },
-            {
-              "name": "light-bg-avatarfit.webp",
-              "type": "file"
-            },
-            {
-              "name": "light-bg.png",
-              "type": "file"
-            },
-            {
-              "name": "light-bg.webp",
-              "type": "file"
-            },
-            {
-              "name": "light-text.png",
-              "type": "file"
-            },
-            {
-              "name": "light-text.webp",
-              "type": "file"
-            },
-            {
-              "name": "light.png",
-              "type": "file"
-            },
-            {
-              "name": "light.webp",
-              "type": "file"
-            }
-          ]
-        },
-        {
           "name": "kimi",
           "type": "directory",
           "children": [
@@ -14921,15 +13689,15 @@
               "type": "file"
             },
             {
-              "name": "dark-color-avatarfit.png",
+              "name": "dark-color-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -15035,15 +13803,15 @@
               "type": "file"
             },
             {
-              "name": "dark-color-avatarfit.png",
+              "name": "dark-color-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -15149,15 +13917,15 @@
               "type": "file"
             },
             {
-              "name": "dark-color-avatarfit.png",
+              "name": "dark-color-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -15263,15 +14031,15 @@
               "type": "file"
             },
             {
-              "name": "dark-color-avatarfit.png",
+              "name": "dark-color-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -15349,6 +14117,92 @@
           ]
         },
         {
+          "name": "krea",
+          "type": "directory",
+          "children": [
+            {
+              "name": "dark-avatarfit.png",
+              "type": "file"
+            },
+            {
+              "name": "dark-avatarfit.webp",
+              "type": "file"
+            },
+            {
+              "name": "dark-bg-avatarfit.png",
+              "type": "file"
+            },
+            {
+              "name": "dark-bg-avatarfit.webp",
+              "type": "file"
+            },
+            {
+              "name": "dark-bg.png",
+              "type": "file"
+            },
+            {
+              "name": "dark-bg.webp",
+              "type": "file"
+            },
+            {
+              "name": "dark-text.png",
+              "type": "file"
+            },
+            {
+              "name": "dark-text.webp",
+              "type": "file"
+            },
+            {
+              "name": "dark.png",
+              "type": "file"
+            },
+            {
+              "name": "dark.webp",
+              "type": "file"
+            },
+            {
+              "name": "light-avatarfit.png",
+              "type": "file"
+            },
+            {
+              "name": "light-avatarfit.webp",
+              "type": "file"
+            },
+            {
+              "name": "light-bg-avatarfit.png",
+              "type": "file"
+            },
+            {
+              "name": "light-bg-avatarfit.webp",
+              "type": "file"
+            },
+            {
+              "name": "light-bg.png",
+              "type": "file"
+            },
+            {
+              "name": "light-bg.webp",
+              "type": "file"
+            },
+            {
+              "name": "light-text.png",
+              "type": "file"
+            },
+            {
+              "name": "light-text.webp",
+              "type": "file"
+            },
+            {
+              "name": "light.png",
+              "type": "file"
+            },
+            {
+              "name": "light.webp",
+              "type": "file"
+            }
+          ]
+        },
+        {
           "name": "kwaipilot",
           "type": "directory",
           "children": [
@@ -15377,15 +14231,15 @@
               "type": "file"
             },
             {
-              "name": "dark-color-avatarfit.png",
+              "name": "dark-color-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -15577,19 +14431,15 @@
               "type": "file"
             },
             {
-              "name": "dark-color-avatarfit.png",
-              "type": "file"
-            },
-            {
               "name": "dark-color-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -15598,22 +14448,6 @@
             },
             {
               "name": "dark-color.webp",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg-avatarfit.png",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg-avatarfit.webp",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg.png",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg.webp",
               "type": "file"
             },
             {
@@ -15657,35 +14491,11 @@
               "type": "file"
             },
             {
-              "name": "light-color-avatarfit.png",
-              "type": "file"
-            },
-            {
-              "name": "light-color-avatarfit.webp",
-              "type": "file"
-            },
-            {
               "name": "light-color.png",
               "type": "file"
             },
             {
               "name": "light-color.webp",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg-avatarfit.png",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg-avatarfit.webp",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg.png",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg.webp",
               "type": "file"
             },
             {
@@ -15735,15 +14545,15 @@
               "type": "file"
             },
             {
-              "name": "dark-color-avatarfit.png",
+              "name": "dark-color-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -15849,19 +14659,15 @@
               "type": "file"
             },
             {
-              "name": "dark-color-avatarfit.png",
-              "type": "file"
-            },
-            {
               "name": "dark-color-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -15870,22 +14676,6 @@
             },
             {
               "name": "dark-color.webp",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg-avatarfit.png",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg-avatarfit.webp",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg.png",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg.webp",
               "type": "file"
             },
             {
@@ -15929,35 +14719,11 @@
               "type": "file"
             },
             {
-              "name": "light-color-avatarfit.png",
-              "type": "file"
-            },
-            {
-              "name": "light-color-avatarfit.webp",
-              "type": "file"
-            },
-            {
               "name": "light-color.png",
               "type": "file"
             },
             {
               "name": "light-color.webp",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg-avatarfit.png",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg-avatarfit.webp",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg.png",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg.webp",
               "type": "file"
             },
             {
@@ -16007,19 +14773,15 @@
               "type": "file"
             },
             {
-              "name": "dark-color-avatarfit.png",
-              "type": "file"
-            },
-            {
               "name": "dark-color-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -16028,22 +14790,6 @@
             },
             {
               "name": "dark-color.webp",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg-avatarfit.png",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg-avatarfit.webp",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg.png",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg.webp",
               "type": "file"
             },
             {
@@ -16087,35 +14833,11 @@
               "type": "file"
             },
             {
-              "name": "light-color-avatarfit.png",
-              "type": "file"
-            },
-            {
-              "name": "light-color-avatarfit.webp",
-              "type": "file"
-            },
-            {
               "name": "light-color.png",
               "type": "file"
             },
             {
               "name": "light-color.webp",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg-avatarfit.png",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg-avatarfit.webp",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg.png",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg.webp",
               "type": "file"
             },
             {
@@ -16165,15 +14887,15 @@
               "type": "file"
             },
             {
-              "name": "dark-color-avatarfit.png",
+              "name": "dark-color-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -16279,19 +15001,15 @@
               "type": "file"
             },
             {
-              "name": "dark-color-avatarfit.png",
-              "type": "file"
-            },
-            {
               "name": "dark-color-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -16300,22 +15018,6 @@
             },
             {
               "name": "dark-color.webp",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg-avatarfit.png",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg-avatarfit.webp",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg.png",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg.webp",
               "type": "file"
             },
             {
@@ -16359,35 +15061,11 @@
               "type": "file"
             },
             {
-              "name": "light-color-avatarfit.png",
-              "type": "file"
-            },
-            {
-              "name": "light-color-avatarfit.webp",
-              "type": "file"
-            },
-            {
               "name": "light-color.png",
               "type": "file"
             },
             {
               "name": "light-color.webp",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg-avatarfit.png",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg-avatarfit.webp",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg.png",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg.webp",
               "type": "file"
             },
             {
@@ -16609,15 +15287,15 @@
               "type": "file"
             },
             {
-              "name": "dark-color-avatarfit.png",
+              "name": "dark-color-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -16731,11 +15409,11 @@
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -16881,15 +15559,15 @@
               "type": "file"
             },
             {
-              "name": "dark-color-avatarfit.png",
+              "name": "dark-color-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -17081,15 +15759,15 @@
               "type": "file"
             },
             {
-              "name": "dark-color-avatarfit.png",
+              "name": "dark-color-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -17195,15 +15873,15 @@
               "type": "file"
             },
             {
-              "name": "dark-color-avatarfit.png",
+              "name": "dark-color-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -17309,15 +15987,15 @@
               "type": "file"
             },
             {
-              "name": "dark-color-avatarfit.png",
+              "name": "dark-color-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -17423,15 +16101,15 @@
               "type": "file"
             },
             {
-              "name": "dark-color-avatarfit.png",
+              "name": "dark-color-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -17631,11 +16309,11 @@
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -18039,19 +16717,15 @@
               "type": "file"
             },
             {
-              "name": "dark-color-avatarfit.png",
-              "type": "file"
-            },
-            {
               "name": "dark-color-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -18060,22 +16734,6 @@
             },
             {
               "name": "dark-color.webp",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg-avatarfit.png",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg-avatarfit.webp",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg.png",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg.webp",
               "type": "file"
             },
             {
@@ -18119,35 +16777,11 @@
               "type": "file"
             },
             {
-              "name": "light-color-avatarfit.png",
-              "type": "file"
-            },
-            {
-              "name": "light-color-avatarfit.webp",
-              "type": "file"
-            },
-            {
               "name": "light-color.png",
               "type": "file"
             },
             {
               "name": "light-color.webp",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg-avatarfit.png",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg-avatarfit.webp",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg.png",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg.webp",
               "type": "file"
             },
             {
@@ -18307,11 +16941,11 @@
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -18473,15 +17107,15 @@
               "type": "file"
             },
             {
-              "name": "dark-color-avatarfit.png",
+              "name": "dark-color-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -18673,15 +17307,15 @@
               "type": "file"
             },
             {
-              "name": "dark-color-avatarfit.png",
+              "name": "dark-color-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -18881,11 +17515,11 @@
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -19031,15 +17665,15 @@
               "type": "file"
             },
             {
-              "name": "dark-color-avatarfit.png",
+              "name": "dark-color-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -19145,15 +17779,15 @@
               "type": "file"
             },
             {
-              "name": "dark-color-avatarfit.png",
+              "name": "dark-color-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -19259,15 +17893,15 @@
               "type": "file"
             },
             {
-              "name": "dark-color-avatarfit.png",
+              "name": "dark-color-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -19459,15 +18093,15 @@
               "type": "file"
             },
             {
-              "name": "dark-color-avatarfit.png",
+              "name": "dark-color-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -19573,19 +18207,15 @@
               "type": "file"
             },
             {
-              "name": "dark-color-avatarfit.png",
-              "type": "file"
-            },
-            {
               "name": "dark-color-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -19594,22 +18224,6 @@
             },
             {
               "name": "dark-color.webp",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg-avatarfit.png",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg-avatarfit.webp",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg.png",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg.webp",
               "type": "file"
             },
             {
@@ -19653,35 +18267,11 @@
               "type": "file"
             },
             {
-              "name": "light-color-avatarfit.png",
-              "type": "file"
-            },
-            {
-              "name": "light-color-avatarfit.webp",
-              "type": "file"
-            },
-            {
               "name": "light-color.png",
               "type": "file"
             },
             {
               "name": "light-color.webp",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg-avatarfit.png",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg-avatarfit.webp",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg.png",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg.webp",
               "type": "file"
             },
             {
@@ -19817,15 +18407,15 @@
               "type": "file"
             },
             {
-              "name": "dark-color-avatarfit.png",
+              "name": "dark-color-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -20197,11 +18787,11 @@
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -20433,19 +19023,15 @@
               "type": "file"
             },
             {
-              "name": "dark-color-avatarfit.png",
-              "type": "file"
-            },
-            {
               "name": "dark-color-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -20454,22 +19040,6 @@
             },
             {
               "name": "dark-color.webp",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg-avatarfit.png",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg-avatarfit.webp",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg.png",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg.webp",
               "type": "file"
             },
             {
@@ -20513,35 +19083,11 @@
               "type": "file"
             },
             {
-              "name": "light-color-avatarfit.png",
-              "type": "file"
-            },
-            {
-              "name": "light-color-avatarfit.webp",
-              "type": "file"
-            },
-            {
               "name": "light-color.png",
               "type": "file"
             },
             {
               "name": "light-color.webp",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg-avatarfit.png",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg-avatarfit.webp",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg.png",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg.webp",
               "type": "file"
             },
             {
@@ -20591,19 +19137,15 @@
               "type": "file"
             },
             {
-              "name": "dark-color-avatarfit.png",
-              "type": "file"
-            },
-            {
               "name": "dark-color-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -20612,22 +19154,6 @@
             },
             {
               "name": "dark-color.webp",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg-avatarfit.png",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg-avatarfit.webp",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg.png",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg.webp",
               "type": "file"
             },
             {
@@ -20671,35 +19197,11 @@
               "type": "file"
             },
             {
-              "name": "light-color-avatarfit.png",
-              "type": "file"
-            },
-            {
-              "name": "light-color-avatarfit.webp",
-              "type": "file"
-            },
-            {
               "name": "light-color.png",
               "type": "file"
             },
             {
               "name": "light-color.webp",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg-avatarfit.png",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg-avatarfit.webp",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg.png",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg.webp",
               "type": "file"
             },
             {
@@ -20749,19 +19251,15 @@
               "type": "file"
             },
             {
-              "name": "dark-color-avatarfit.png",
-              "type": "file"
-            },
-            {
               "name": "dark-color-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -20770,22 +19268,6 @@
             },
             {
               "name": "dark-color.webp",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg-avatarfit.png",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg-avatarfit.webp",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg.png",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg.webp",
               "type": "file"
             },
             {
@@ -20829,35 +19311,11 @@
               "type": "file"
             },
             {
-              "name": "light-color-avatarfit.png",
-              "type": "file"
-            },
-            {
-              "name": "light-color-avatarfit.webp",
-              "type": "file"
-            },
-            {
               "name": "light-color.png",
               "type": "file"
             },
             {
               "name": "light-color.webp",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg-avatarfit.png",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg-avatarfit.webp",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg.png",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg.webp",
               "type": "file"
             },
             {
@@ -21135,11 +19593,11 @@
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -21505,15 +19963,15 @@
               "type": "file"
             },
             {
-              "name": "dark-color-avatarfit.png",
+              "name": "dark-color-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -21713,11 +20171,11 @@
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -21863,19 +20321,15 @@
               "type": "file"
             },
             {
-              "name": "dark-color-avatarfit.png",
-              "type": "file"
-            },
-            {
               "name": "dark-color-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -21884,22 +20338,6 @@
             },
             {
               "name": "dark-color.webp",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg-avatarfit.png",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg-avatarfit.webp",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg.png",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg.webp",
               "type": "file"
             },
             {
@@ -21943,35 +20381,11 @@
               "type": "file"
             },
             {
-              "name": "light-color-avatarfit.png",
-              "type": "file"
-            },
-            {
-              "name": "light-color-avatarfit.webp",
-              "type": "file"
-            },
-            {
               "name": "light-color.png",
               "type": "file"
             },
             {
               "name": "light-color.webp",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg-avatarfit.png",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg-avatarfit.webp",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg.png",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg.webp",
               "type": "file"
             },
             {
@@ -22201,11 +20615,11 @@
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -22351,15 +20765,15 @@
               "type": "file"
             },
             {
-              "name": "dark-color-avatarfit.png",
+              "name": "dark-color-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -22465,15 +20879,15 @@
               "type": "file"
             },
             {
-              "name": "dark-color-avatarfit.png",
+              "name": "dark-color-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -22665,19 +21079,15 @@
               "type": "file"
             },
             {
-              "name": "dark-color-avatarfit.png",
-              "type": "file"
-            },
-            {
               "name": "dark-color-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -22686,22 +21096,6 @@
             },
             {
               "name": "dark-color.webp",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg-avatarfit.png",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg-avatarfit.webp",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg.png",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg.webp",
               "type": "file"
             },
             {
@@ -22753,35 +21147,11 @@
               "type": "file"
             },
             {
-              "name": "light-color-avatarfit.png",
-              "type": "file"
-            },
-            {
-              "name": "light-color-avatarfit.webp",
-              "type": "file"
-            },
-            {
               "name": "light-color.png",
               "type": "file"
             },
             {
               "name": "light-color.webp",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg-avatarfit.png",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg-avatarfit.webp",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg.png",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg.webp",
               "type": "file"
             },
             {
@@ -22839,15 +21209,15 @@
               "type": "file"
             },
             {
-              "name": "dark-color-avatarfit.png",
+              "name": "dark-color-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -22953,15 +21323,15 @@
               "type": "file"
             },
             {
-              "name": "dark-color-avatarfit.png",
+              "name": "dark-color-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -23067,19 +21437,15 @@
               "type": "file"
             },
             {
-              "name": "dark-color-avatarfit.png",
-              "type": "file"
-            },
-            {
               "name": "dark-color-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -23088,22 +21454,6 @@
             },
             {
               "name": "dark-color.webp",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg-avatarfit.png",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg-avatarfit.webp",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg.png",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg.webp",
               "type": "file"
             },
             {
@@ -23147,35 +21497,11 @@
               "type": "file"
             },
             {
-              "name": "light-color-avatarfit.png",
-              "type": "file"
-            },
-            {
-              "name": "light-color-avatarfit.webp",
-              "type": "file"
-            },
-            {
               "name": "light-color.png",
               "type": "file"
             },
             {
               "name": "light-color.webp",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg-avatarfit.png",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg-avatarfit.webp",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg.png",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg.webp",
               "type": "file"
             },
             {
@@ -23233,11 +21559,11 @@
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -23641,19 +21967,15 @@
               "type": "file"
             },
             {
-              "name": "dark-color-avatarfit.png",
-              "type": "file"
-            },
-            {
               "name": "dark-color-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -23662,22 +21984,6 @@
             },
             {
               "name": "dark-color.webp",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg-avatarfit.png",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg-avatarfit.webp",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg.png",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg.webp",
               "type": "file"
             },
             {
@@ -23721,35 +22027,11 @@
               "type": "file"
             },
             {
-              "name": "light-color-avatarfit.png",
-              "type": "file"
-            },
-            {
-              "name": "light-color-avatarfit.webp",
-              "type": "file"
-            },
-            {
               "name": "light-color.png",
               "type": "file"
             },
             {
               "name": "light-color.webp",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg-avatarfit.png",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg-avatarfit.webp",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg.png",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg.webp",
               "type": "file"
             },
             {
@@ -23799,15 +22081,15 @@
               "type": "file"
             },
             {
-              "name": "dark-color-avatarfit.png",
+              "name": "dark-color-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -24007,11 +22289,11 @@
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -24165,11 +22447,11 @@
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -24315,19 +22597,15 @@
               "type": "file"
             },
             {
-              "name": "dark-color-avatarfit.png",
-              "type": "file"
-            },
-            {
               "name": "dark-color-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -24336,22 +22614,6 @@
             },
             {
               "name": "dark-color.webp",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg-avatarfit.png",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg-avatarfit.webp",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg.png",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg.webp",
               "type": "file"
             },
             {
@@ -24395,35 +22657,11 @@
               "type": "file"
             },
             {
-              "name": "light-color-avatarfit.png",
-              "type": "file"
-            },
-            {
-              "name": "light-color-avatarfit.webp",
-              "type": "file"
-            },
-            {
               "name": "light-color.png",
               "type": "file"
             },
             {
               "name": "light-color.webp",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg-avatarfit.png",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg-avatarfit.webp",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg.png",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg.webp",
               "type": "file"
             },
             {
@@ -24575,15 +22813,15 @@
               "type": "file"
             },
             {
-              "name": "dark-color-avatarfit.png",
+              "name": "dark-color-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -24705,19 +22943,15 @@
               "type": "file"
             },
             {
-              "name": "dark-color-avatarfit.png",
-              "type": "file"
-            },
-            {
               "name": "dark-color-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -24726,22 +22960,6 @@
             },
             {
               "name": "dark-color.webp",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg-avatarfit.png",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg-avatarfit.webp",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg.png",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg.webp",
               "type": "file"
             },
             {
@@ -24785,35 +23003,11 @@
               "type": "file"
             },
             {
-              "name": "light-color-avatarfit.png",
-              "type": "file"
-            },
-            {
-              "name": "light-color-avatarfit.webp",
-              "type": "file"
-            },
-            {
               "name": "light-color.png",
               "type": "file"
             },
             {
               "name": "light-color.webp",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg-avatarfit.png",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg-avatarfit.webp",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg.png",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg.webp",
               "type": "file"
             },
             {
@@ -24863,15 +23057,15 @@
               "type": "file"
             },
             {
-              "name": "dark-color-avatarfit.png",
+              "name": "dark-color-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -24977,15 +23171,15 @@
               "type": "file"
             },
             {
-              "name": "dark-color-avatarfit.png",
+              "name": "dark-color-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -25091,19 +23285,15 @@
               "type": "file"
             },
             {
-              "name": "dark-color-avatarfit.png",
-              "type": "file"
-            },
-            {
               "name": "dark-color-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -25112,22 +23302,6 @@
             },
             {
               "name": "dark-color.webp",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg-avatarfit.png",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg-avatarfit.webp",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg.png",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg.webp",
               "type": "file"
             },
             {
@@ -25171,35 +23345,11 @@
               "type": "file"
             },
             {
-              "name": "light-color-avatarfit.png",
-              "type": "file"
-            },
-            {
-              "name": "light-color-avatarfit.webp",
-              "type": "file"
-            },
-            {
               "name": "light-color.png",
               "type": "file"
             },
             {
               "name": "light-color.webp",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg-avatarfit.png",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg-avatarfit.webp",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg.png",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg.webp",
               "type": "file"
             },
             {
@@ -25249,15 +23399,15 @@
               "type": "file"
             },
             {
-              "name": "dark-color-avatarfit.png",
+              "name": "dark-color-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -25363,15 +23513,15 @@
               "type": "file"
             },
             {
-              "name": "dark-color-avatarfit.png",
+              "name": "dark-color-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -25477,15 +23627,15 @@
               "type": "file"
             },
             {
-              "name": "dark-color-avatarfit.png",
+              "name": "dark-color-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -25607,15 +23757,15 @@
               "type": "file"
             },
             {
-              "name": "dark-color-avatarfit.png",
+              "name": "dark-color-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -25737,19 +23887,15 @@
               "type": "file"
             },
             {
-              "name": "dark-color-avatarfit.png",
-              "type": "file"
-            },
-            {
               "name": "dark-color-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -25758,22 +23904,6 @@
             },
             {
               "name": "dark-color.webp",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg-avatarfit.png",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg-avatarfit.webp",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg.png",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg.webp",
               "type": "file"
             },
             {
@@ -25817,35 +23947,11 @@
               "type": "file"
             },
             {
-              "name": "light-color-avatarfit.png",
-              "type": "file"
-            },
-            {
-              "name": "light-color-avatarfit.webp",
-              "type": "file"
-            },
-            {
               "name": "light-color.png",
               "type": "file"
             },
             {
               "name": "light-color.webp",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg-avatarfit.png",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg-avatarfit.webp",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg.png",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg.webp",
               "type": "file"
             },
             {
@@ -25903,11 +24009,11 @@
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -26053,19 +24159,15 @@
               "type": "file"
             },
             {
-              "name": "dark-color-avatarfit.png",
-              "type": "file"
-            },
-            {
               "name": "dark-color-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -26074,22 +24176,6 @@
             },
             {
               "name": "dark-color.webp",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg-avatarfit.png",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg-avatarfit.webp",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg.png",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg.webp",
               "type": "file"
             },
             {
@@ -26133,35 +24219,11 @@
               "type": "file"
             },
             {
-              "name": "light-color-avatarfit.png",
-              "type": "file"
-            },
-            {
-              "name": "light-color-avatarfit.webp",
-              "type": "file"
-            },
-            {
               "name": "light-color.png",
               "type": "file"
             },
             {
               "name": "light-color.webp",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg-avatarfit.png",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg-avatarfit.webp",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg.png",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg.webp",
               "type": "file"
             },
             {
@@ -26211,15 +24273,15 @@
               "type": "file"
             },
             {
-              "name": "dark-color-avatarfit.png",
+              "name": "dark-color-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -26497,15 +24559,15 @@
               "type": "file"
             },
             {
-              "name": "dark-color-avatarfit.png",
+              "name": "dark-color-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -26611,15 +24673,15 @@
               "type": "file"
             },
             {
-              "name": "dark-color-avatarfit.png",
+              "name": "dark-color-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -26741,19 +24803,15 @@
               "type": "file"
             },
             {
-              "name": "dark-color-avatarfit.png",
-              "type": "file"
-            },
-            {
               "name": "dark-color-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -26762,22 +24820,6 @@
             },
             {
               "name": "dark-color.webp",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg-avatarfit.png",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg-avatarfit.webp",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg.png",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg.webp",
               "type": "file"
             },
             {
@@ -26845,35 +24887,11 @@
               "type": "file"
             },
             {
-              "name": "light-color-avatarfit.png",
-              "type": "file"
-            },
-            {
-              "name": "light-color-avatarfit.webp",
-              "type": "file"
-            },
-            {
               "name": "light-color.png",
               "type": "file"
             },
             {
               "name": "light-color.webp",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg-avatarfit.png",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg-avatarfit.webp",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg.png",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg.webp",
               "type": "file"
             },
             {
@@ -26931,15 +24949,15 @@
               "type": "file"
             },
             {
-              "name": "dark-color-avatarfit.png",
+              "name": "dark-color-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -27053,11 +25071,11 @@
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -27211,11 +25229,11 @@
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -27377,19 +25395,15 @@
               "type": "file"
             },
             {
-              "name": "dark-color-avatarfit.png",
-              "type": "file"
-            },
-            {
               "name": "dark-color-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -27398,22 +25412,6 @@
             },
             {
               "name": "dark-color.webp",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg-avatarfit.png",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg-avatarfit.webp",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg.png",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg.webp",
               "type": "file"
             },
             {
@@ -27473,35 +25471,11 @@
               "type": "file"
             },
             {
-              "name": "light-color-avatarfit.png",
-              "type": "file"
-            },
-            {
-              "name": "light-color-avatarfit.webp",
-              "type": "file"
-            },
-            {
               "name": "light-color.png",
               "type": "file"
             },
             {
               "name": "light-color.webp",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg-avatarfit.png",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg-avatarfit.webp",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg.png",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg.webp",
               "type": "file"
             },
             {
@@ -27637,19 +25611,15 @@
               "type": "file"
             },
             {
-              "name": "dark-color-avatarfit.png",
-              "type": "file"
-            },
-            {
               "name": "dark-color-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -27658,22 +25628,6 @@
             },
             {
               "name": "dark-color.webp",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg-avatarfit.png",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg-avatarfit.webp",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg.png",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg.webp",
               "type": "file"
             },
             {
@@ -27717,35 +25671,11 @@
               "type": "file"
             },
             {
-              "name": "light-color-avatarfit.png",
-              "type": "file"
-            },
-            {
-              "name": "light-color-avatarfit.webp",
-              "type": "file"
-            },
-            {
               "name": "light-color.png",
               "type": "file"
             },
             {
               "name": "light-color.webp",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg-avatarfit.png",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg-avatarfit.webp",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg.png",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg.webp",
               "type": "file"
             },
             {
@@ -27795,15 +25725,15 @@
               "type": "file"
             },
             {
-              "name": "dark-color-avatarfit.png",
+              "name": "dark-color-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -27995,19 +25925,15 @@
               "type": "file"
             },
             {
-              "name": "dark-color-avatarfit.png",
-              "type": "file"
-            },
-            {
               "name": "dark-color-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -28016,22 +25942,6 @@
             },
             {
               "name": "dark-color.webp",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg-avatarfit.png",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg-avatarfit.webp",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg.png",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg.webp",
               "type": "file"
             },
             {
@@ -28075,35 +25985,11 @@
               "type": "file"
             },
             {
-              "name": "light-color-avatarfit.png",
-              "type": "file"
-            },
-            {
-              "name": "light-color-avatarfit.webp",
-              "type": "file"
-            },
-            {
               "name": "light-color.png",
               "type": "file"
             },
             {
               "name": "light-color.webp",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg-avatarfit.png",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg-avatarfit.webp",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg.png",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg.webp",
               "type": "file"
             },
             {
@@ -28153,15 +26039,15 @@
               "type": "file"
             },
             {
-              "name": "dark-color-avatarfit.png",
+              "name": "dark-color-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -28275,11 +26161,11 @@
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -28667,15 +26553,15 @@
               "type": "file"
             },
             {
-              "name": "dark-color-avatarfit.png",
+              "name": "dark-color-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -28789,11 +26675,11 @@
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -29025,15 +26911,15 @@
               "type": "file"
             },
             {
-              "name": "dark-color-avatarfit.png",
+              "name": "dark-color-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -29139,15 +27025,15 @@
               "type": "file"
             },
             {
-              "name": "dark-color-avatarfit.png",
+              "name": "dark-color-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -29253,19 +27139,15 @@
               "type": "file"
             },
             {
-              "name": "dark-color-avatarfit.png",
-              "type": "file"
-            },
-            {
               "name": "dark-color-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -29274,22 +27156,6 @@
             },
             {
               "name": "dark-color.webp",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg-avatarfit.png",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg-avatarfit.webp",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg.png",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg.webp",
               "type": "file"
             },
             {
@@ -29333,35 +27199,11 @@
               "type": "file"
             },
             {
-              "name": "light-color-avatarfit.png",
-              "type": "file"
-            },
-            {
-              "name": "light-color-avatarfit.webp",
-              "type": "file"
-            },
-            {
               "name": "light-color.png",
               "type": "file"
             },
             {
               "name": "light-color.webp",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg-avatarfit.png",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg-avatarfit.webp",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg.png",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg.webp",
               "type": "file"
             },
             {
@@ -29419,11 +27261,11 @@
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -29663,11 +27505,11 @@
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -29899,15 +27741,15 @@
               "type": "file"
             },
             {
-              "name": "dark-color-avatarfit.png",
+              "name": "dark-color-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -30013,15 +27855,15 @@
               "type": "file"
             },
             {
-              "name": "dark-color-avatarfit.png",
+              "name": "dark-color-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -30213,15 +28055,15 @@
               "type": "file"
             },
             {
-              "name": "dark-color-avatarfit.png",
+              "name": "dark-color-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -30413,15 +28255,15 @@
               "type": "file"
             },
             {
-              "name": "dark-color-avatarfit.png",
+              "name": "dark-color-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -30613,19 +28455,15 @@
               "type": "file"
             },
             {
-              "name": "dark-color-avatarfit.png",
-              "type": "file"
-            },
-            {
               "name": "dark-color-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -30634,22 +28472,6 @@
             },
             {
               "name": "dark-color.webp",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg-avatarfit.png",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg-avatarfit.webp",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg.png",
-              "type": "file"
-            },
-            {
-              "name": "dark-colorbg.webp",
               "type": "file"
             },
             {
@@ -30693,35 +28515,11 @@
               "type": "file"
             },
             {
-              "name": "light-color-avatarfit.png",
-              "type": "file"
-            },
-            {
-              "name": "light-color-avatarfit.webp",
-              "type": "file"
-            },
-            {
               "name": "light-color.png",
               "type": "file"
             },
             {
               "name": "light-color.webp",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg-avatarfit.png",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg-avatarfit.webp",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg.png",
-              "type": "file"
-            },
-            {
-              "name": "light-colorbg.webp",
               "type": "file"
             },
             {
@@ -30771,15 +28569,15 @@
               "type": "file"
             },
             {
-              "name": "dark-color-avatarfit.png",
+              "name": "dark-color-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
@@ -30836,6 +28634,92 @@
             },
             {
               "name": "light-color.webp",
+              "type": "file"
+            },
+            {
+              "name": "light-text.png",
+              "type": "file"
+            },
+            {
+              "name": "light-text.webp",
+              "type": "file"
+            },
+            {
+              "name": "light.png",
+              "type": "file"
+            },
+            {
+              "name": "light.webp",
+              "type": "file"
+            }
+          ]
+        },
+        {
+          "name": "zenmux",
+          "type": "directory",
+          "children": [
+            {
+              "name": "dark-avatarfit.png",
+              "type": "file"
+            },
+            {
+              "name": "dark-avatarfit.webp",
+              "type": "file"
+            },
+            {
+              "name": "dark-bg-avatarfit.png",
+              "type": "file"
+            },
+            {
+              "name": "dark-bg-avatarfit.webp",
+              "type": "file"
+            },
+            {
+              "name": "dark-bg.png",
+              "type": "file"
+            },
+            {
+              "name": "dark-bg.webp",
+              "type": "file"
+            },
+            {
+              "name": "dark-text.png",
+              "type": "file"
+            },
+            {
+              "name": "dark-text.webp",
+              "type": "file"
+            },
+            {
+              "name": "dark.png",
+              "type": "file"
+            },
+            {
+              "name": "dark.webp",
+              "type": "file"
+            },
+            {
+              "name": "light-avatarfit.png",
+              "type": "file"
+            },
+            {
+              "name": "light-avatarfit.webp",
+              "type": "file"
+            },
+            {
+              "name": "light-bg-avatarfit.png",
+              "type": "file"
+            },
+            {
+              "name": "light-bg-avatarfit.webp",
+              "type": "file"
+            },
+            {
+              "name": "light-bg.png",
+              "type": "file"
+            },
+            {
+              "name": "light-bg.webp",
               "type": "file"
             },
             {
@@ -30979,11 +28863,11 @@
               "type": "file"
             },
             {
-              "name": "dark-color-bg-avatarfit.png",
+              "name": "dark-color-bg-avatarfit.webp",
               "type": "file"
             },
             {
-              "name": "dark-color-bg.png",
+              "name": "dark-color-bg.webp",
               "type": "file"
             },
             {
