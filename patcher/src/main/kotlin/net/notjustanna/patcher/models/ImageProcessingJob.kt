@@ -32,25 +32,25 @@ class ImageProcessingJob(private val brandDir: File) : Runnable {
                 } ?: return
 
             // Find the color file and detect color once
-            val colorFile = imageFiles.firstOrNull { it.name.contains("-color") }
-            val colorDetection = colorFile?.let {
+            val (colorFiles, regularFiles) = imageFiles.partition { it.name.contains("-color") }
+            val bestColorFile = colorFiles.reduceOrNull { a, b -> if (a.extension == "webp") a else b }
+            val colorDetection = bestColorFile?.let {
                 try {
                     if (Config.IS_DEVELOPMENT) {
                         println("      🔍 Detecting color from ${brandDir.name}...")
                     }
                     Colorimetry.detect(ImageIO.read(it))
                 } catch (e: Exception) {
-                    System.err.println("      ⚠️  Error detecting color from ${colorFile.name}: ${e.message}")
+                    System.err.println("      ⚠️  Error detecting color from ${bestColorFile.name}: ${e.message}")
                     null
                 }
             } ?: brandColorFallbacks[brandName.lowercase()]
 
-            if (colorFile != null) {
+            for (colorFile in colorFiles) {
                 processImage(colorFile, null, outputIconsDir)
             }
 
             // Process non-color files
-            val regularFiles = imageFiles.filter { !it.name.contains("-color") }
 
             for (imageFile in regularFiles) {
                 processImage(imageFile, colorDetection, outputIconsDir)
