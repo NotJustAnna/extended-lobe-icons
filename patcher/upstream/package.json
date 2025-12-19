@@ -5,6 +5,6 @@
   "private": true,
   "dependencies": {
     "@lobehub/icons-static-png": "^1.75.0",
-    "@lobehub/icons-static-webp": "^1.75.0"
+    "@lobehub/icons-static-webp": "^1.78.0"
   }
 }
