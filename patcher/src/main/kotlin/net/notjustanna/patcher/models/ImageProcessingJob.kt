@@ -5,7 +5,7 @@ import net.notjustanna.patcher.manifest.ShaManifest
 import net.notjustanna.patcher.processors.AvatarFit
 import net.notjustanna.patcher.processors.BackgroundGenerator
 import net.notjustanna.patcher.processors.Compositor
-import net.notjustanna.patcher.utils.Colorimetry
+import net.notjustanna.patcher.utils.BrandColorDetector
 import java.awt.Color
 import java.awt.image.BufferedImage
 import java.io.File
@@ -28,7 +28,7 @@ class ImageProcessingJob(
             // Short-circuit: if the prior manifest records identical source
             // SHAs AND the same patcher version for this brand, copy the
             // already-published outputs directly rather than re-running the
-            // nondeterministic AvatarFit / Colorimetry / Batik pipeline.
+            // nondeterministic AvatarFit / BrandColorDetector / Batik pipeline.
             if (tryReuseCachedOutputs(brandName, outputIconsDir)) {
                 if (Config.IS_DEVELOPMENT) {
                     println("      ♻️  Reused cached outputs for $brandName")
@@ -44,7 +44,7 @@ class ImageProcessingJob(
                             && file.extension.lowercase() in Config.RASTER_EXTENSIONS
                             && file.nameWithoutExtension
                         .split('-')
-                        .all { it !in Config.IGNORE_PROPERTIES }
+                        .all { it !in Config.UPSTREAM_PASSTHROUGH_TOKENS }
                 } ?: return
 
             // Find the color file and detect color once
@@ -54,14 +54,14 @@ class ImageProcessingJob(
                     if (Config.IS_DEVELOPMENT) {
                         println("      🔍 Detecting color from ${brandDir.name} using ${file}...")
                     }
-                    Colorimetry.detect(ImageIO.read(file)).takeIf {
+                    BrandColorDetector.detect(ImageIO.read(file)).takeIf {
                         it.type != DetectionType.NONE
                     }
                 } catch (e: Exception) {
                     System.err.println("      ⚠️  Error detecting color from ${file.name}: ${e.message}")
                     null
                 }
-            } ?: brandColorFallbacks[brandName.lowercase()]
+            } ?: brandColorOverrides[brandName.lowercase()]
 
             // Process non-color files
             for (imageFile in regularFiles) {
@@ -132,19 +132,21 @@ class ImageProcessingJob(
             val standardBg = BackgroundGenerator.createSolid(image.width, image.height, bgColor)
 
             val variants = mutableMapOf(
-                "-avatarfit" to avatarfitImage,
+                "-avatar" to avatarfitImage,
                 "-bg" to Compositor.apply(standardBg, image),
-                "-bg-avatarfit" to Compositor.apply(standardBg, avatarfitImage)
+                "-bg-avatar" to Compositor.apply(standardBg, avatarfitImage)
             )
 
-            // Add brand color variants if color detection is available
+            // Add brand color variants if color detection is available.
+            // Note: the previous "-color-avatar" entry here was a duplicate of
+            // "-avatar" under a misleading name — the actual colored-source
+            // avatar variant is produced by the separate colorFiles pass.
             if (colorDetect != null) {
                 val brandBg = createBrandBackground(colorDetect, image.width, image.height)
 
                 if (brandBg != null) {
-                    variants["-color-avatarfit"] = avatarfitImage
                     variants["-colorbg"] = Compositor.apply(brandBg, image)
-                    variants["-colorbg-avatarfit"] = Compositor.apply(brandBg, avatarfitImage)
+                    variants["-colorbg-avatar"] = Compositor.apply(brandBg, avatarfitImage)
                 }
             }
 
@@ -178,11 +180,19 @@ class ImageProcessingJob(
     }
 
     companion object {
-        private val brandColorFallbacks = mapOf(
+        /**
+         * Intentional brand-color choices that take effect when auto-detection
+         * returns [DetectionType.NONE]. These are not fallbacks from a failing
+         * detector — they're deliberate aesthetic decisions for brands whose
+         * upstream color variant doesn't produce the desired brand color.
+         */
+        private val brandColorOverrides = mapOf(
+            // OpenAI's mint brand color; upstream color variant reads as near-black to the detector.
             "openai" to ColorDetection(
                 type = DetectionType.SOLID,
                 solidColor = Color(0x00A67E)
             ),
+            // OpenRouter's slate; upstream lacks a usable color variant.
             "openrouter" to ColorDetection(
                 type = DetectionType.SOLID,
                 solidColor = Color(0x94A3B8)

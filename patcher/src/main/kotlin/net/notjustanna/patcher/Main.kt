@@ -4,7 +4,7 @@ import kotlinx.serialization.ExperimentalSerializationApi
 import net.notjustanna.patcher.config.Config
 import net.notjustanna.patcher.manifest.BrandManifest
 import net.notjustanna.patcher.manifest.ShaManifest
-import net.notjustanna.patcher.utils.Processor
+import net.notjustanna.patcher.utils.JobScanner
 import net.notjustanna.patcher.utils.Downloader
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.encodeToString
@@ -22,21 +22,31 @@ fun main(args: Array<String>) {
         val brandFilter = args.filter { !it.startsWith("--") }.toSet()
 
         // Load the prior manifest (if any) BEFORE anything mutates packages/.
-        // Note: Config.init deletes working/ on first object reference, but
-        // leaves packages/ alone until copyToPackages() runs.
+        // This must happen before prepareWorkingDirectories() because the
+        // working/ wipe has no effect on packages/, but reading the manifest
+        // before any side effects keeps the ordering obvious.
         val previousManifest = ShaManifest.loadOrNull(File(Config.PACKAGES_DIR, "sha.json"))
         if (previousManifest != null) {
             println("  📖 Loaded prior sha.json (patcher ${previousManifest.patcherVersion}, ${previousManifest.brands.size} brands)")
         }
 
+        // Step 0: Prepare working directories. Done here, not in a Config
+        // init block, so simply referencing Config doesn't wipe state — that
+        // used to be a footgun for exploratory code and tests.
+        Config.prepareWorkingDirectories()
+
         // Step 1: Download packages
         val upstreamPackages = Downloader.run()
 
-        System.gc() // Suggest garbage collection before heavy processing
+        // Constrained-RAM CI (GitHub Actions free runners, ~7GB) benefits from
+        // a GC hint between the Downloader phase (holds tarball buffers) and
+        // the image-processing allocation surge. System.gc() is a hint, not a
+        // guarantee — but empirically it helps reduce peak heap on CI.
+        System.gc()
 
-        // Step 2: Scan and process raster images (avatarfit + backgrounds)
+        // Step 2: Scan and process raster images (avatar + backgrounds)
         println("🎨 Processing images...")
-        val rasterJobs = Processor.scanJobs(
+        val rasterJobs = JobScanner.scanJobs(
             brandFilter = brandFilter,
             previousManifest = previousManifest,
             currentPatcherVersion = BuildConfig.VERSION,

@@ -5,40 +5,48 @@ import java.awt.RenderingHints.*
 import java.awt.geom.AffineTransform
 import java.awt.image.BufferedImage
 import java.awt.image.BufferedImage.TYPE_INT_ARGB
-import kotlin.math.PI
-import kotlin.math.cos
-import kotlin.math.sin
 import kotlin.math.sqrt
 
 /**
- * Apply avatar fit (circle fitting) to images
+ * Apply avatar fit (ellipse shrinkwrap + scale-to-fill) to images.
+ *
+ * The algorithm:
+ *   1. Find the content bounding box (pixels with alpha above threshold).
+ *   2. Pre-compute the set of **boundary content pixels** — content pixels
+ *      with at least one non-content 4-neighbor, or that lie on the image
+ *      edge. For a connected shape this set is equivalent-for-containment
+ *      to the full content set, but much smaller (≈ perimeter, not area).
+ *   3. Starting from an ellipse that tightly circumscribes the bounding box
+ *      (radii = half-extent × √2), shrink it as long as every boundary pixel
+ *      remains inside the ellipse. Two passes: isotropic, then round-robin
+ *      edge-by-edge.
+ *   4. Expand the fitted ellipse by the configured padding percent, then
+ *      scale-translate the image so that ellipse fills the canvas.
  */
 object AvatarFit {
     /**
-     * Apply avatarfit (ellipse fitting) to an image
-     * Returns the fitted BufferedImage ready to composite
+     * Apply avatarfit to an image. Returns a new BufferedImage of the same
+     * dimensions with the content scaled so its fitted ellipse fills the
+     * canvas (minus [Config.AVATAR_PADDING_PERCENT] padding).
      */
     fun apply(image: BufferedImage): BufferedImage {
-        // Step 1: Find content boundaries
-        val contentBounds = findContentBounds(image)
-        if (contentBounds == null) {
-            // No content found, return empty image
-            return image
-        }
+        val contentBounds = findContentBounds(image) ?: return image
 
-        // Step 2: Create initial ellipse inscribing the boundaries
+        // Boundary pixels: cached once, used for every containment check.
+        val boundary = findBoundaryPixels(image)
+        if (boundary.isEmpty()) return image
+
+        // Initial ellipse: radii = half-extent × √2 circumscribes the bbox
+        // rectangle exactly (corners touch the ellipse). Boundary-pixel
+        // containment is rigorous so we don't need the old √2.5 fudge factor.
         var ellipse = createInitialEllipse(contentBounds)
 
-        // Step 3: General shrinkwrap
-        ellipse = generalShrinkwrap(image, ellipse)
+        // Shrink isotropically, then fine-tune each edge independently.
+        ellipse = generalShrinkwrap(boundary, ellipse)
+        ellipse = roundRobinShrinkwrap(boundary, ellipse)
 
-        // Step 4: Fine-tune with round-robin edge reduction
-        ellipse = roundRobinShrinkwrap(image, ellipse)
-
-        // Step 5: Apply padding (reducing the ellipse to leave padding space)
+        // Add padding, then compute transform to scale-fill.
         val paddedEllipse = applyPadding(ellipse)
-
-        // Step 6: Calculate transform to fit content into the full-canvas ellipse
         val transform = calculateTransform(
             contentBounds,
             paddedEllipse,
@@ -46,7 +54,6 @@ object AvatarFit {
             image.height
         )
 
-        // Step 7: Render with full-canvas ellipse
         return renderImage(image, transform)
     }
 
@@ -72,27 +79,67 @@ object AvatarFit {
         return if (hasContent) Bounds(minX, minY, maxX, maxY) else null
     }
 
+    /**
+     * Collect boundary content pixels as an interleaved `[x0, y0, x1, y1, ...]`
+     * IntArray. A pixel is "boundary" if it is itself content AND either lies
+     * on the image edge or has at least one non-content 4-neighbor.
+     *
+     * For a simply-connected shape, the set of boundary pixels is sufficient
+     * to test ellipse containment — if every boundary pixel is inside an
+     * ellipse, every interior pixel is too (interior pixels are convexly
+     * surrounded by boundary pixels). For shapes with holes the inner
+     * boundary is also captured, which is correct: holes don't affect the
+     * outer containment test.
+     */
+    private fun findBoundaryPixels(image: BufferedImage): IntArray {
+        val w = image.width
+        val h = image.height
+        // Worst case (checkerboard-ish): every content pixel is a boundary
+        // pixel. Allocate for that and trim at the end.
+        val buf = IntArray(w * h * 2)
+        var n = 0
+
+        for (y in 0 until h) {
+            for (x in 0 until w) {
+                if (!isContentPixel(image, x, y)) continue
+                val onEdge = x == 0 || y == 0 || x == w - 1 || y == h - 1
+                val isBoundary = onEdge ||
+                    !isContentPixel(image, x - 1, y) ||
+                    !isContentPixel(image, x + 1, y) ||
+                    !isContentPixel(image, x, y - 1) ||
+                    !isContentPixel(image, x, y + 1)
+                if (isBoundary) {
+                    buf[n++] = x
+                    buf[n++] = y
+                }
+            }
+        }
+        return buf.copyOf(n)
+    }
+
     private fun isContentPixel(image: BufferedImage, x: Int, y: Int): Boolean {
-        return (image.getRGB(x, y) shr 24) and 0xff > Config.CIRCLE_FIT_MIN_ALPHA_TOLERANCE
+        return (image.getRGB(x, y) shr 24) and 0xff > Config.CONTENT_ALPHA_THRESHOLD
     }
 
     private fun createInitialEllipse(bounds: Bounds): EllipseParams {
-        // To inscribe a rectangle inside an ellipse, multiply by √2
-        val sqrt2 = sqrt(2.5) // Slightly larger to ensure full coverage
+        // √2 exactly circumscribes the bounding rectangle — the rectangle's
+        // corners sit on the ellipse. Rigorous boundary-pixel containment
+        // means no fudge factor is needed.
+        val factor = sqrt(2.0)
         return EllipseParams(
             centerX = bounds.centerX,
             centerY = bounds.centerY,
-            radiusX = (bounds.width / 2.0) * sqrt2,
-            radiusY = (bounds.height / 2.0) * sqrt2
+            radiusX = (bounds.width / 2.0) * factor,
+            radiusY = (bounds.height / 2.0) * factor
         )
     }
 
     private fun generalShrinkwrap(
-        image: BufferedImage,
+        boundary: IntArray,
         initialEllipse: EllipseParams
     ): EllipseParams {
         var current = initialEllipse
-        val shrinkStep = 0.5 // Shrink by 1 pixel at a time
+        val shrinkStep = 0.5
         val minRadius = 1.0
 
         while (current.radiusX > minRadius && current.radiusY > minRadius) {
@@ -100,8 +147,7 @@ object AvatarFit {
                 radiusX = current.radiusX - shrinkStep,
                 radiusY = current.radiusY - shrinkStep
             )
-
-            if (containsAllContentEdgeCheck(image, test)) {
+            if (containsAll(boundary, test)) {
                 current = test
             } else {
                 break
@@ -112,52 +158,52 @@ object AvatarFit {
     }
 
     private fun roundRobinShrinkwrap(
-        image: BufferedImage,
+        boundary: IntArray,
         initialEllipse: EllipseParams
     ): EllipseParams {
         var current = initialEllipse
-        val shrinkStep = 0.25 // Fine-tune with smaller steps
+        val shrinkStep = 0.25
         var anyProgress = true
 
         while (anyProgress) {
             anyProgress = false
 
-            // Try shrinking left (reduce centerX and radiusX)
+            // Shrink left edge: push center right, reduce radiusX
             val testLeft = current.copy(
                 centerX = current.centerX + shrinkStep / 2,
                 radiusX = current.radiusX - shrinkStep / 2
             )
-            if (current.radiusX > 1 && containsAllContentEdgeCheck(image, testLeft)) {
+            if (current.radiusX > 1 && containsAll(boundary, testLeft)) {
                 current = testLeft
                 anyProgress = true
             }
 
-            // Try shrinking right (increase centerX, reduce radiusX)
+            // Shrink right edge: push center left, reduce radiusX
             val testRight = current.copy(
                 centerX = current.centerX - shrinkStep / 2,
                 radiusX = current.radiusX - shrinkStep / 2
             )
-            if (current.radiusX > 1 && containsAllContentEdgeCheck(image, testRight)) {
+            if (current.radiusX > 1 && containsAll(boundary, testRight)) {
                 current = testRight
                 anyProgress = true
             }
 
-            // Try shrinking top (reduce centerY and radiusY)
+            // Shrink top edge: push center down, reduce radiusY
             val testTop = current.copy(
                 centerY = current.centerY + shrinkStep / 2,
                 radiusY = current.radiusY - shrinkStep / 2
             )
-            if (current.radiusY > 1 && containsAllContentEdgeCheck(image, testTop)) {
+            if (current.radiusY > 1 && containsAll(boundary, testTop)) {
                 current = testTop
                 anyProgress = true
             }
 
-            // Try shrinking bottom (increase centerY, reduce radiusY)
+            // Shrink bottom edge: push center up, reduce radiusY
             val testBottom = current.copy(
                 centerY = current.centerY - shrinkStep / 2,
                 radiusY = current.radiusY - shrinkStep / 2
             )
-            if (current.radiusY > 1 && containsAllContentEdgeCheck(image, testBottom)) {
+            if (current.radiusY > 1 && containsAll(boundary, testBottom)) {
                 current = testBottom
                 anyProgress = true
             }
@@ -166,44 +212,26 @@ object AvatarFit {
         return current
     }
 
-    private fun containsAllContentEdgeCheck(
-        image: BufferedImage,
-        ellipse: EllipseParams
-    ): Boolean {
-        // Check pixels near the ellipse edge (optimization)
-        val checkRadius = 2 // Check within 2 pixels of the edge
-        val angleStep = PI / 360 // Check every 0.5 degree
-
-        // First, quick check on ellipse boundary points
-        var angle = 0.0
-        while (angle < 2 * PI) {
-            // Points on and near the ellipse edge
-            for (r in -checkRadius..checkRadius) {
-                val factor = 1.0 - (r.toDouble() / ellipse.radiusX.coerceAtLeast(ellipse.radiusY))
-                val x = (ellipse.centerX + cos(angle) * ellipse.radiusX * factor).toInt()
-                val y = (ellipse.centerY + sin(angle) * ellipse.radiusY * factor).toInt()
-
-                if (x in 0 until image.width && y in 0 until image.height) {
-                    if (isContentPixel(image, x, y) && !isInEllipse(x, y, ellipse)) {
-                        return false
-                    }
-                }
-            }
-            angle += angleStep
+    /**
+     * Does [ellipse] contain every boundary pixel in [boundary]? O(n) in the
+     * boundary-pixel count — a multiply-add per pixel, no trig.
+     */
+    private fun containsAll(boundary: IntArray, ellipse: EllipseParams): Boolean {
+        val rx2 = ellipse.radiusX * ellipse.radiusX
+        val ry2 = ellipse.radiusY * ellipse.radiusY
+        var i = 0
+        while (i < boundary.size) {
+            val dx = boundary[i] - ellipse.centerX
+            val dy = boundary[i + 1] - ellipse.centerY
+            if (dx * dx / rx2 + dy * dy / ry2 > 1.0) return false
+            i += 2
         }
-
         return true
-    }
-
-    private fun isInEllipse(x: Int, y: Int, ellipse: EllipseParams): Boolean {
-        val dx = (x - ellipse.centerX) / ellipse.radiusX
-        val dy = (y - ellipse.centerY) / ellipse.radiusY
-        return dx * dx + dy * dy <= 1.0
     }
 
     private fun applyPadding(ellipse: EllipseParams): EllipseParams {
         // Increase the ellipse to create padding space
-        val factor = 1.0 + (Config.CIRCLE_FIT_PADDING_PERCENTAGE / 100.0)
+        val factor = 1.0 + (Config.AVATAR_PADDING_PERCENT / 100.0)
         return ellipse.copy(
             radiusX = ellipse.radiusX * factor,
             radiusY = ellipse.radiusY * factor
@@ -246,14 +274,10 @@ object AvatarFit {
         )
 
         result.createGraphics().apply {
-            // Enable anti-aliasing
             setRenderingHint(KEY_ANTIALIASING, VALUE_ANTIALIAS_ON)
             setRenderingHint(KEY_INTERPOLATION, VALUE_INTERPOLATION_BILINEAR)
             setRenderingHint(KEY_RENDERING, VALUE_RENDER_QUALITY)
-
-            // Draw the transformed image
             drawImage(originalImage, imageTransform, null)
-
             dispose()
         }
 
