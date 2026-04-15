@@ -124,7 +124,7 @@ class ImageProcessingJob(
             val nameWithoutExt = file.nameWithoutExtension
 
             val image = ImageIO.read(file) ?: return
-            val avatarfitImage = AvatarFit.apply(image)
+            val avatarImage = AvatarFit.apply(image)
 
             // Standard black/white background variants
             val isDark = fileName.startsWith("dark")
@@ -132,9 +132,9 @@ class ImageProcessingJob(
             val standardBg = BackgroundGenerator.createSolid(image.width, image.height, bgColor)
 
             val variants = mutableMapOf(
-                "-avatar" to avatarfitImage,
+                "-avatar" to avatarImage,
                 "-bg" to Compositor.apply(standardBg, image),
-                "-bg-avatar" to Compositor.apply(standardBg, avatarfitImage)
+                "-bg-avatar" to Compositor.apply(standardBg, avatarImage)
             )
 
             // Add brand color variants if color detection is available.
@@ -146,7 +146,7 @@ class ImageProcessingJob(
 
                 if (brandBg != null) {
                     variants["-colorbg"] = Compositor.apply(brandBg, image)
-                    variants["-colorbg-avatar"] = Compositor.apply(brandBg, avatarfitImage)
+                    variants["-colorbg-avatar"] = Compositor.apply(brandBg, avatarImage)
                 }
             }
 

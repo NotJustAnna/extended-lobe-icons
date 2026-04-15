@@ -31,33 +31,38 @@ Each brand icon is processed into multiple variants for maximum flexibility. Her
 
 All variants are available in both PNG and WebP formats for optimal performance.
 
-## 🚀 Usage via GitHub CDN
+## 🚀 Usage via CDN
 
-You can use these icons directly in your projects via GitHub's raw content CDN:
+The generated icons can be hotlinked directly. **jsDelivr** is the recommended endpoint — it's a real CDN backed by multiple edge providers, supports tag/commit pinning, and doesn't share GitHub's hotlinking caveats:
 
 ```html
 <!-- Standard icon -->
-<img src="https://raw.githubusercontent.com/NotJustAnna/extended-lobe-icons/main/packages/icons/claude/light.png" alt="Claude" />
+<img src="https://cdn.jsdelivr.net/gh/NotJustAnna/extended-lobe-icons@main/packages/icons/claude/light.png" alt="Claude" />
 
-<!-- Avatar-fitted with background for dark mode -->
-<img src="https://raw.githubusercontent.com/NotJustAnna/extended-lobe-icons/main/packages/icons/claude/dark-bg-avatar.webp" alt="Claude" />
+<!-- Avatar with background, dark mode -->
+<img src="https://cdn.jsdelivr.net/gh/NotJustAnna/extended-lobe-icons@main/packages/icons/claude/dark-bg-avatar.webp" alt="Claude" />
 ```
+
+Pin to a specific commit/tag for stability (`@<sha>` or `@v2.0.0` instead of `@main`).
 
 ### URL Pattern
 
 ```
-https://raw.githubusercontent.com/NotJustAnna/extended-lobe-icons/main/packages/icons/{brand}/{variant}.{format}
+https://cdn.jsdelivr.net/gh/NotJustAnna/extended-lobe-icons@{ref}/packages/icons/{brand}/{variant}.{format}
 ```
 
+- **{ref}**: Branch (`main`), tag (`v2.0.0`), or commit SHA
 - **{brand}**: Brand name (e.g., `claude`, `openai`, `anthropic`)
 - **{variant}**: One of the variants listed above (e.g., `light`, `dark-avatar`, `light-bg`)
 - **{format}**: Either `png` or `webp`
+
+`raw.githubusercontent.com` also works as a fallback but is not a production-grade CDN — prefer jsDelivr unless you have a specific reason.
 
 ### Example in React/JSX
 
 ```jsx
 const BrandIcon = ({ brand, variant = 'light', format = 'webp' }) => {
-  const url = `https://raw.githubusercontent.com/NotJustAnna/extended-lobe-icons/main/packages/icons/${brand}/${variant}.${format}`;
+  const url = `https://cdn.jsdelivr.net/gh/NotJustAnna/extended-lobe-icons@main/packages/icons/${brand}/${variant}.${format}`;
   return <img src={url} alt={brand} />;
 };
 
@@ -87,7 +92,9 @@ See the [packages/icons/](packages/icons/) directory for the complete list of av
 
 ## 📄 License
 
-This project extends [LobeHub's lobe-icons](https://github.com/lobehub/lobe-icons). Please refer to their repository for licensing information regarding the original icons.
+- **The patcher code** in `patcher/` is released under the MIT License.
+- **The icon assets** in `packages/icons/` are derived from [LobeHub's lobe-icons](https://github.com/lobehub/lobe-icons), which is MIT-licensed. The MIT terms cover the icon artwork as distributed here.
+- **Brand trademarks** (logos, names, marks) remain the property of their respective owners. Licensing the artwork under MIT does **not** grant rights to use any brand's trademark — that's governed by each brand's own trademark policy. If you ship these icons in a product, make sure your use is consistent with each brand's guidelines.
 
 ## 🙌 Credits
 

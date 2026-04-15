@@ -25,9 +25,9 @@ import kotlin.math.sqrt
  */
 object AvatarFit {
     /**
-     * Apply avatarfit to an image. Returns a new BufferedImage of the same
-     * dimensions with the content scaled so its fitted ellipse fills the
-     * canvas (minus [Config.AVATAR_PADDING_PERCENT] padding).
+     * Fit the image for avatar use: content is scaled so its fitted ellipse
+     * fills the canvas (minus [Config.AVATAR_PADDING_PERCENT] padding).
+     * Returns a new BufferedImage of the same dimensions.
      */
     fun apply(image: BufferedImage): BufferedImage {
         val contentBounds = findContentBounds(image) ?: return image
