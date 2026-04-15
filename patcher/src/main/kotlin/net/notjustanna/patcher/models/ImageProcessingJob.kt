@@ -1,6 +1,7 @@
 package net.notjustanna.patcher.models
 
 import net.notjustanna.patcher.config.Config
+import net.notjustanna.patcher.manifest.ShaManifest
 import net.notjustanna.patcher.processors.AvatarFit
 import net.notjustanna.patcher.processors.BackgroundGenerator
 import net.notjustanna.patcher.processors.Compositor
@@ -13,12 +14,27 @@ import javax.imageio.ImageIO
 /**
  * Job for processing all images in a brand directory
  */
-class ImageProcessingJob(private val brandDir: File) : Runnable {
+class ImageProcessingJob(
+    private val brandDir: File,
+    private val previousManifest: ShaManifest?,
+    private val currentPatcherVersion: String,
+) : Runnable {
     override fun run() {
         try {
             val brandName = brandDir.name
             val outputIconsDir = File(Config.OUTPUT_ICONS_DIR, brandName)
             outputIconsDir.mkdirs()
+
+            // Short-circuit: if the prior manifest records identical source
+            // SHAs AND the same patcher version for this brand, copy the
+            // already-published outputs directly rather than re-running the
+            // nondeterministic AvatarFit / Colorimetry / Batik pipeline.
+            if (tryReuseCachedOutputs(brandName, outputIconsDir)) {
+                if (Config.IS_DEVELOPMENT) {
+                    println("      ♻️  Reused cached outputs for $brandName")
+                }
+                return
+            }
 
             // Find all image files
 
@@ -58,6 +74,46 @@ class ImageProcessingJob(private val brandDir: File) : Runnable {
         } catch (e: Exception) {
             System.err.println("      ⚠️  Error processing brand ${brandDir.name}: ${e.message}")
         }
+    }
+
+    /**
+     * Try to reuse previously generated outputs for this brand.
+     *
+     * Returns true iff:
+     *   - a prior manifest exists and its patcherVersion matches the current one,
+     *   - the manifest has an entry for this brand,
+     *   - every source file currently in brandDir hashes to the value recorded
+     *     in the manifest (and no source files were added or removed), and
+     *   - the previously-published output directory still exists on disk.
+     *
+     * When all conditions hold, the previously-published output files are copied
+     * byte-for-byte into outputIconsDir, bypassing the nondeterministic pipeline.
+     */
+    private fun tryReuseCachedOutputs(brandName: String, outputIconsDir: File): Boolean {
+        val manifest = previousManifest ?: return false
+        if (manifest.patcherVersion != currentPatcherVersion) return false
+
+        val recorded = manifest.brands[brandName]?.sources ?: return false
+
+        val currentSourceFiles = brandDir.listFiles()?.filter { it.isFile } ?: return false
+        if (currentSourceFiles.size != recorded.size) return false
+
+        for (file in currentSourceFiles) {
+            val expected = recorded[file.name] ?: return false
+            if (ShaManifest.sha256(file) != expected) return false
+        }
+
+        val publishedDir = File(Config.PACKAGES_DIR, "icons/$brandName")
+        if (!publishedDir.isDirectory) return false
+
+        val publishedFiles = publishedDir.listFiles()?.filter { it.isFile } ?: return false
+        if (publishedFiles.isEmpty()) return false
+
+        for (f in publishedFiles) {
+            val dest = File(outputIconsDir, f.name)
+            f.copyTo(dest, overwrite = true)
+        }
+        return true
     }
 
     private fun processImage(file: File, colorDetect: ColorDetection?, outputDir: File) {

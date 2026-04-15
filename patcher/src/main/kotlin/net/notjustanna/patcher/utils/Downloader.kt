@@ -23,7 +23,12 @@ object Downloader {
         .followRedirects(HttpClient.Redirect.NORMAL)
         .build()
 
-    fun run() {
+    /**
+     * Download and extract upstream packages.
+     * Returns the list of (packageName, version) pairs that were processed so
+     * callers (Main) can record them in the sha.json manifest.
+     */
+    fun run(): List<Pair<String, String>> {
         println("📦 Downloading and caching packages...")
 
         if (!Config.INPUT_ICONS_DIR.exists()) {
@@ -33,7 +38,7 @@ object Downloader {
         val packages = readPackageJson()
         if (packages.isEmpty()) {
             System.err.println("⚠️  No packages found in upstream/package.json")
-            return
+            return emptyList()
         }
 
         for ((pkgName, version) in packages) {
@@ -45,6 +50,7 @@ object Downloader {
         }
 
         println("✅ Packages processed")
+        return packages
     }
 
     /**

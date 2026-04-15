@@ -1,6 +1,7 @@
 package net.notjustanna.patcher.utils
 
 import net.notjustanna.patcher.config.Config
+import net.notjustanna.patcher.manifest.ShaManifest
 import net.notjustanna.patcher.models.ImageProcessingJob
 
 /**
@@ -10,7 +11,11 @@ object Processor {
     /**
      * Scan for image processing jobs (one job per brand directory)
      */
-    fun scanJobs(brandFilter: Set<String>): List<Runnable> {
+    fun scanJobs(
+        brandFilter: Set<String>,
+        previousManifest: ShaManifest?,
+        currentPatcherVersion: String,
+    ): List<Runnable> {
         if (!Config.INPUT_ICONS_DIR.exists()) {
             return emptyList()
         }
@@ -22,6 +27,12 @@ object Processor {
             allBrands.filter { it.name in brandFilter }
         }
 
-        return brands.map(::ImageProcessingJob)
+        return brands.map { brandDir ->
+            ImageProcessingJob(
+                brandDir = brandDir,
+                previousManifest = previousManifest,
+                currentPatcherVersion = currentPatcherVersion,
+            )
+        }
     }
 }

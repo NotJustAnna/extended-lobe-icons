@@ -2,32 +2,47 @@ package net.notjustanna.patcher
 
 import kotlinx.serialization.ExperimentalSerializationApi
 import net.notjustanna.patcher.config.Config
+import net.notjustanna.patcher.manifest.BrandManifest
+import net.notjustanna.patcher.manifest.ShaManifest
 import net.notjustanna.patcher.utils.Processor
 import net.notjustanna.patcher.utils.Downloader
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
 import java.io.File
+import java.time.Instant
 import kotlin.system.exitProcess
 
 fun main(args: Array<String>) {
     try {
-        println("🚀 Starting icon patcher")
+        println("🚀 Starting icon patcher (version ${BuildConfig.VERSION})")
 
         Config.IS_DEVELOPMENT = args.any { it == "--dev" }
 
         val brandFilter = args.filter { !it.startsWith("--") }.toSet()
 
+        // Load the prior manifest (if any) BEFORE anything mutates packages/.
+        // Note: Config.init deletes working/ on first object reference, but
+        // leaves packages/ alone until copyToPackages() runs.
+        val previousManifest = ShaManifest.loadOrNull(File(Config.PACKAGES_DIR, "sha.json"))
+        if (previousManifest != null) {
+            println("  📖 Loaded prior sha.json (patcher ${previousManifest.patcherVersion}, ${previousManifest.brands.size} brands)")
+        }
+
         // Step 1: Download packages
-        Downloader.run()
+        val upstreamPackages = Downloader.run()
 
         System.gc() // Suggest garbage collection before heavy processing
 
         // Step 2: Scan and process raster images (avatarfit + backgrounds)
         println("🎨 Processing images...")
-        val rasterJobs = Processor.scanJobs(brandFilter)
+        val rasterJobs = Processor.scanJobs(
+            brandFilter = brandFilter,
+            previousManifest = previousManifest,
+            currentPatcherVersion = BuildConfig.VERSION,
+        )
         println("  Discovered ${rasterJobs.size} brands")
-        
+
         if (rasterJobs.isNotEmpty()) {
             if (Config.IS_DEVELOPMENT) {
                 rasterJobs.forEach { it.run() }
@@ -42,6 +57,9 @@ fun main(args: Array<String>) {
 
         // Step 5: Generate index.json
         generateIndexJson()
+
+        // Step 6: Generate sha.json
+        generateShaJson(upstreamPackages)
 
         println("🎉 Icon patching complete!")
         exitProcess(0)
@@ -99,15 +117,15 @@ private fun generateIndexJson() {
     }
 
     val rootNode = buildFileTree(Config.PACKAGES_DIR, Config.PACKAGES_DIR.name)
-    
+
     val json = Json {
         prettyPrint = true
         prettyPrintIndent = "  "
     }
-    
+
     val indexFile = File(Config.PACKAGES_DIR, "index.json")
     indexFile.writeText(json.encodeToString(rootNode))
-    
+
     println("✅ Generated ${indexFile.normalize().absoluteFile.absolutePath}")
 }
 
@@ -124,4 +142,45 @@ private fun buildFileTree(file: File, name: String): FileNode {
     } else {
         FileNode(name = name, type = "file")
     }
+}
+
+/**
+ * Generate packages/sha.json recording, per brand, the SHA-256 of each
+ * upstream source file used to produce the currently published outputs plus
+ * the patcher version. The next run consults this manifest to skip brands
+ * whose inputs haven't changed.
+ */
+private fun generateShaJson(upstreamPackages: List<Pair<String, String>>) {
+    println("🔐 Generating sha.json...")
+
+    if (!Config.INPUT_ICONS_DIR.exists()) {
+        println("  ⚠️  Input directory not found, skipping sha.json")
+        return
+    }
+
+    val brandDirs = Config.INPUT_ICONS_DIR.listFiles()
+        ?.filter { it.isDirectory }
+        ?.sortedBy { it.name }
+        ?: emptyList()
+
+    val brands = brandDirs.associate { brandDir ->
+        val sources = brandDir.listFiles()
+            ?.filter { it.isFile }
+            ?.sortedBy { it.name }
+            ?.associate { it.name to ShaManifest.sha256(it) }
+            ?: emptyMap()
+        brandDir.name to BrandManifest(sources = sources)
+    }
+
+    val manifest = ShaManifest(
+        patcherVersion = BuildConfig.VERSION,
+        generatedAt = Instant.now().toString(),
+        upstreamPackages = upstreamPackages.toMap().toSortedMap(),
+        brands = brands.toSortedMap(),
+    )
+
+    val outFile = File(Config.PACKAGES_DIR, "sha.json")
+    ShaManifest.save(manifest, outFile)
+
+    println("✅ Generated ${outFile.normalize().absoluteFile.absolutePath}")
 }

@@ -37,6 +37,38 @@ kotlin {
     }
 }
 
+// Generate BuildConfig.kt with the patcher version so runtime code can stamp
+// it into sha.json for cache-invalidation purposes.
+val generatedBuildConfigDir = layout.buildDirectory.dir("generated/source/buildconfig/main/kotlin")
+
+val generateBuildConfig by tasks.registering {
+    val outputDir = generatedBuildConfigDir
+    val versionValue = project.version.toString()
+    inputs.property("version", versionValue)
+    outputs.dir(outputDir)
+    doLast {
+        val file = outputDir.get().file("net/notjustanna/patcher/BuildConfig.kt").asFile
+        file.parentFile.mkdirs()
+        file.writeText(
+            """
+            package net.notjustanna.patcher
+
+            object BuildConfig {
+                const val VERSION: String = "$versionValue"
+            }
+            """.trimIndent() + "\n"
+        )
+    }
+}
+
+sourceSets.main {
+    kotlin.srcDir(generatedBuildConfigDir)
+}
+
+tasks.named("compileKotlin") {
+    dependsOn(generateBuildConfig)
+}
+
 application {
     mainClass.set("net.notjustanna.patcher.MainKt")
 }
